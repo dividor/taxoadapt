@@ -217,7 +217,7 @@ Instead of using predefined datasets, you can provide your own Excel file with c
 python main.py \
   --topic "Humanitarian evaluation" \
   --llm api \
-  --dataset_sheet "../humanitarian-evaluation-ai-research/data/pdf_metadata_results_2023_2025.xlsx" \
+  --dataset_sheet "./datasets/pdf_metadata_results_2023_2025_sampled.xlsx" \
   --dataset_sheet_tabname "PDF Metadata" \
   --dataset_title_fieldname "Title" \
   --dataset_abstract_fieldname "Abstractive Summary (map reduced)" \
