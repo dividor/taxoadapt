@@ -1,0 +1,38 @@
+Label: humanitarian_evaluation
+Dimension: methodologies
+Description: None
+Level: 0
+Source: Initial
+----------------------------------------
+Children:
+     Label: qualitative_methods
+     Dimension: methodologies
+     Description: Methodologies that focus on understanding the experiences, perceptions, and contexts of individuals and communities affected by humanitarian crises through in-depth interviews, focus groups, and ethnographic research.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: quantitative_methods
+     Dimension: methodologies
+     Description: Methodologies that use statistical and numerical data to measure the impact, effectiveness, and efficiency of humanitarian interventions, often involving surveys, experiments, and data analysis.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: mixed-methods
+     Dimension: methodologies
+     Description: Methodologies that combine both qualitative and quantitative approaches to provide a comprehensive understanding of humanitarian evaluation, integrating data from various sources to enhance the validity and reliability of findings.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: participatory_methods
+     Dimension: methodologies
+     Description: Methodologies that involve active participation and collaboration with affected communities in the evaluation process, ensuring that their voices, needs, and perspectives are central to the assessment and decision-making.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: systems_thinking_methods
+     Dimension: methodologies
+     Description: Methodologies that apply systems thinking principles to understand the complex interactions and dynamics within humanitarian contexts, using tools like system mapping, causal loop diagrams, and agent-based modeling to identify leverage points for intervention.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+----------------------------------------

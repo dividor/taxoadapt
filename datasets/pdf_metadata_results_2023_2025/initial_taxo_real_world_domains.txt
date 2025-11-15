@@ -1,0 +1,38 @@
+Label: humanitarian_evaluation
+Dimension: real_world_domains
+Description: None
+Level: 0
+Source: Initial
+----------------------------------------
+Children:
+     Label: disaster_response
+     Dimension: real_world_domains
+     Description: Focuses on the evaluation of methods and techniques used in disaster response, including emergency aid distribution, search and rescue operations, and crisis management.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: healthcare_interventions
+     Dimension: real_world_domains
+     Description: Examines the impact and effectiveness of healthcare interventions in humanitarian settings, such as vaccination programs, disease control, and mental health support.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: food_security
+     Dimension: real_world_domains
+     Description: Assesses the strategies and programs aimed at ensuring food security in vulnerable populations, including food distribution, agricultural support, and nutrition programs.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: refugee_support
+     Dimension: real_world_domains
+     Description: Evaluates the effectiveness of support systems and services provided to refugees, including shelter, education, and integration programs.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: water_and_sanitation
+     Dimension: real_world_domains
+     Description: Analyzes the implementation and impact of water and sanitation projects in humanitarian contexts, focusing on access to clean water, hygiene practices, and disease prevention.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+----------------------------------------

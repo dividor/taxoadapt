@@ -1,0 +1,38 @@
+Label: humanitarian_evaluation
+Dimension: evaluation_methods
+Description: None
+Level: 0
+Source: Initial
+----------------------------------------
+Children:
+     Label: impact_assessment
+     Dimension: evaluation_methods
+     Description: Evaluates the overall impact of humanitarian interventions on affected populations, including both intended and unintended outcomes.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: needs_assessment
+     Dimension: evaluation_methods
+     Description: Assesses the specific needs of communities in crisis situations to ensure that aid efforts are targeted and effective.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: program_effectiveness
+     Dimension: evaluation_methods
+     Description: Analyzes the effectiveness of humanitarian programs by measuring their success in achieving stated goals and objectives.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: participatory_evaluation
+     Dimension: evaluation_methods
+     Description: Involves beneficiaries and stakeholders in the evaluation process to provide a more comprehensive and inclusive assessment of humanitarian efforts.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: cost_benefit_analysis
+     Dimension: evaluation_methods
+     Description: Compares the costs and benefits of humanitarian interventions to determine their economic efficiency and value for money.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+----------------------------------------

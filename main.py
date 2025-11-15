@@ -198,7 +198,6 @@ def main(args):
 
     print("######## STEP 3: CLASSIFY PAPERS BY DIMENSION (TASK, METHOD, DATASET, EVAL, APPLICATION, etc.) ########")
 
-    args.llm = 'vllm'
     dags = {dim:DAG(root=root, dim=dim) for dim, root in roots.items()}
 
     # do for internal collection
@@ -255,7 +254,6 @@ def main(args):
         else:
             # no children -> perform depth expansion
             new_children, success = expandNodeDepth(args, curr_node, id2node, label2node)
-            args.llm = 'vllm'
             print(f'(DEPTH EXPANSION) new {len(new_children)} children for {curr_node.label} ({curr_node.dimension}) are: {str((new_children))}')
             if (len(new_children) > 0) and success:
                 queue.append(curr_node)
