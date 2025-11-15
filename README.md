@@ -51,7 +51,7 @@ This installs only the packages needed for API-based LLM usage (excludes vLLM fo
 
 ### LLM Provider Configuration
 
-**All LLM settings are controlled via the `.env` file** - no code changes needed! This repository supports multiple LLM providers: **OpenAI**, **Azure OpenAI**, **Anthropic Claude**, and **Hugging Face**.
+**All LLM settings for '--llm api' are controlled via the `.env` file** - no code changes needed! This repository supports multiple LLM providers: **OpenAI**, **Azure OpenAI**, **Anthropic Claude**, and **Hugging Face**.
 
 #### Quick Setup
 
@@ -197,7 +197,7 @@ The following are the primary arguments for TaxoAdapt (defined in main.py; modif
 
 - `topic` $\rightarrow$ this is the topic of the corpus, e.g., "natural language processing", "robotics", etc.
 - `dataset` $\rightarrow$ this is the name of the dataset, e.g., "llm_graph", "icra_2020", etc. The huggingface dataset should be added to the `construct_dataset` function in `main.py` (see below).
-- `llm` $\rightarrow$ this is the LLM backend to use: "gpt" (API-based) or "vllm" (local). When using "gpt":
+- `llm` $\rightarrow$ this is the LLM backend to use: "api" (API-based) or "vllm" (local). When using "api":
   - **All configuration comes from `.env` file**
   - **Must set `LLM_PROVIDER`** (openai, azure, claude, or huggingface) - no default
   - Set the model variable (e.g., `OPENAI_MODEL=gpt-4o`, `CLAUDE_MODEL=claude-3-5-sonnet-20241022`)
@@ -216,6 +216,7 @@ Instead of using predefined datasets, you can provide your own Excel file with c
 ```bash
 python main.py \
   --topic "Humanitarian evaluation" \
+  --llm api \
   --dataset_sheet "../humanitarian-evaluation-ai-research/data/pdf_metadata_results_2023_2025.xlsx" \
   --dataset_sheet_tabname "PDF Metadata" \
   --dataset_title_fieldname "Title" \

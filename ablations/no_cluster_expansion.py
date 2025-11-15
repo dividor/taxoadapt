@@ -156,7 +156,7 @@ def expandNodeWidth(args, node, id2node, label2node):
 	
 	subset_unlabeled_papers = list(unlabeled_papers.values())[:5]
 	
-	args.llm = 'gpt'
+	args.llm = 'api'
 	
 	exp_prompts = [constructPrompt(args, width_system_instruction, width_main_prompt(paper, node, ancestors)) for paper in subset_unlabeled_papers]
 	exp_outputs = promptLLM(args=args, prompts=exp_prompts, schema=WidthExpansionSchema, max_new_tokens=2000, json_mode=True, temperature=0.1, top_p=0.99)
@@ -220,7 +220,7 @@ def expandNodeDepth(args, node, id2node, label2node):
 		ancestors = " -> ".join([ancestor.label for ancestor in node_ancestors])
 	
 	# identify potential subtopic options from list of papers
-	args.llm = 'gpt'
+	args.llm = 'api'
 	
 	subset_papers = list(node.papers.values())[:5]
 	

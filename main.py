@@ -278,8 +278,8 @@ if __name__ == "__main__":
                        help='Topic of the corpus (e.g., "natural language processing", "robotics")')
     parser.add_argument('--dataset', type=str, default='llm_graph',
                        help='Predefined dataset name (e.g., "emnlp_2024", "cvpr_2024")')
-    parser.add_argument('--llm', type=str, default='gpt',
-                       help='LLM backend: "gpt" (API-based) or "vllm" (local)')
+    parser.add_argument('--llm', type=str, default='api',
+                       help='LLM backend: "api" (API-based, configured via .env) or "vllm" (local)')
     parser.add_argument('--max_depth', type=int, default=2,
                        help='Maximum depth of each taxonomy')
     parser.add_argument('--init_levels', type=int, default=1,

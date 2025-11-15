@@ -62,7 +62,7 @@ def chunkify(text, token_lens, length=512):
 	return chunks
 
 def constructPrompt(args, init_prompt, main_prompt):
-	if (args.llm == 'gpt'):
+	if (args.llm == 'api'):
 		return [
             {"role": "system", "content": init_prompt},
             {"role": "user", "content": main_prompt}]
@@ -75,7 +75,7 @@ def initializeLLM(args):
 	args.client['vllm'] = LLM(model="meta-llama/Meta-Llama-3.1-8B-Instruct", tensor_parallel_size=4, gpu_memory_utilization=0.95, 
 						   max_num_batched_tokens=4096, max_num_seqs=1000, enable_prefix_caching=True)
 
-	if args.llm == 'gpt':
+	if args.llm == 'api':
 		# Use unified LLM provider - reads from LLM_PROVIDER in .env (required)
 		args.client[args.llm] = get_llm_provider()
 	
@@ -83,7 +83,7 @@ def initializeLLM(args):
 
 def promptGPT(args, prompts, schema=None, max_new_tokens=1024, json_mode=True, temperature=0.1, top_p=0.99):
 	outputs = []
-	provider = args.client['gpt']
+	provider = args.client['api']
 	
 	for messages in tqdm(prompts):
 		# Use the unified provider interface
@@ -113,7 +113,7 @@ def promptLlamaVLLM(args, prompts, schema=None, max_new_tokens=1024, temperature
     return outputs
 
 def promptLLM(args, prompts, schema=None, max_new_tokens=1024, json_mode=True, temperature=0.1, top_p=0.99):
-	if args.llm == 'gpt':
+	if args.llm == 'api':
 		return promptGPT(args, prompts, schema, max_new_tokens, json_mode, temperature, top_p)
 	else:
 		return promptLlamaVLLM(args, prompts, schema, max_new_tokens, temperature, top_p)
