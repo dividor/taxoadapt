@@ -72,10 +72,11 @@ def constructPrompt(args, init_prompt, main_prompt):
 def initializeLLM(args):
 	args.client = {}
 
-	args.client['vllm'] = LLM(model="meta-llama/Meta-Llama-3.1-8B-Instruct", tensor_parallel_size=4, gpu_memory_utilization=0.95, 
-						   max_num_batched_tokens=4096, max_num_seqs=1000, enable_prefix_caching=True)
-
-	if args.llm == 'api':
+	if args.llm == 'vllm':
+		# Only initialize vLLM if using local inference
+		args.client['vllm'] = LLM(model="meta-llama/Meta-Llama-3.1-8B-Instruct", tensor_parallel_size=4, gpu_memory_utilization=0.95, 
+							   max_num_batched_tokens=4096, max_num_seqs=1000, enable_prefix_caching=True)
+	elif args.llm == 'api':
 		# Use unified LLM provider - reads from LLM_PROVIDER in .env (required)
 		args.client[args.llm] = get_llm_provider()
 	
