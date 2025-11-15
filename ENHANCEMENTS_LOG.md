@@ -303,6 +303,12 @@ Implemented strict error handling for JSON parsing failures and fixed LLM provid
   - Ensures `--llm api` works throughout entire execution
   - Prevents `KeyError: 'vllm'` when running in API-only mode
 
+#### Enhanced JSON Cleaning
+- **utils.py**: Updated `clean_json_string()` to handle YAML-style separators
+  - Removes `---` markers that some LLMs add around JSON output
+  - Handles both wrapped (`---...---`) and single `---` markers
+  - Prevents `JSONDecodeError` from improperly formatted LLM responses
+
 ### Error Message Format
 ```
 ================================================================================
@@ -319,6 +325,7 @@ Cleaned output (FULL):
 ### Files Modified
 - `taxonomy.py`
 - `expansion.py`
+- `utils.py`
 
 ### Impact
 - **Improved Debugging**: Full JSON output on errors makes API issues easier to diagnose
