@@ -6,6 +6,7 @@ import argparse
 from tqdm import tqdm
 from dotenv import load_dotenv
 import pandas as pd
+from datetime import datetime
 
 # Load environment variables from .env file
 load_dotenv()
@@ -167,6 +168,11 @@ def initialize_DAG(args):
 
 
 def main(args):
+    start_time = datetime.now()
+    print("="*80)
+    print(f"EXECUTION START TIME: {start_time.strftime('%Y-%m-%d %H:%M:%S')}")
+    print("="*80)
+    print()
 
     print("######## STEP 1: LOAD IN DATASET ########")
 
@@ -343,6 +349,15 @@ def main(args):
     print(f"Excel output saved to: {excel_path}")
     print(f"  - Taxonomy tab: {len(taxonomy_df)} rows")
     print(f"  - Examples tab: {len(examples_df)} rows")
+    
+    # Print end time and duration
+    end_time = datetime.now()
+    duration = end_time - start_time
+    print()
+    print("="*80)
+    print(f"EXECUTION END TIME: {end_time.strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"TOTAL DURATION: {duration}")
+    print("="*80)
 
 
 
