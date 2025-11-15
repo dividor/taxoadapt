@@ -274,6 +274,59 @@ Improved repository configuration and git management.
 
 ---
 
+## Robust Error Handling and LLM Provider Consistency
+
+### Overview
+Implemented strict error handling for JSON parsing failures and fixed LLM provider switching issues to ensure API mode works consistently throughout execution.
+
+### Features
+- **Hard Stop on JSON Parse Errors**: All JSON parsing failures now raise exceptions with full error details instead of silently continuing with empty data
+- **Complete Error Output**: Failed JSON responses are printed in full (no truncation) to aid debugging
+- **LLM Provider Preservation**: Fixed issue where `expansion.py` was hardcoding LLM provider switches, now preserves user's `--llm` choice
+- **Detailed Error Messages**: Clear, formatted error messages with separators for easy identification
+
+### Implementation Details
+
+#### JSON Parse Error Handling
+- **taxonomy.py**: Modified `classify_node()` to raise `RuntimeError` on JSON parse errors
+  - Prints full raw output and cleaned output
+  - No longer returns empty classifications on parse failures
+  
+#### Expansion Error Handling  
+- **expansion.py**: Updated both `expandNodeWidth()` and `expandNodeDepth()` functions
+  - Raise `RuntimeError` after 5 failed parse attempts (previously returned empty results)
+  - Print full problematic JSON output for debugging
+  
+#### LLM Provider Consistency
+- **expansion.py**: Fixed hardcoded `args.llm = 'vllm'` switches
+  - Now saves and restores original LLM provider setting
+  - Ensures `--llm api` works throughout entire execution
+  - Prevents `KeyError: 'vllm'` when running in API-only mode
+
+### Error Message Format
+```
+================================================================================
+CRITICAL ERROR: JSON parse error for prompt X: [error details]
+================================================================================
+Raw output (FULL):
+[complete raw JSON response]
+================================================================================
+Cleaned output (FULL):
+[complete cleaned JSON]
+================================================================================
+```
+
+### Files Modified
+- `taxonomy.py`
+- `expansion.py`
+
+### Impact
+- **Improved Debugging**: Full JSON output on errors makes API issues easier to diagnose
+- **Fail-Fast Behavior**: Stops execution immediately on parse errors instead of propagating bad data
+- **API Mode Stability**: `--llm api` now works reliably without vLLM dependency or configuration
+
+---
+
 ## Backward Compatibility
 
 All enhancements maintain backward compatibility with the original codebase:

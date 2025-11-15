@@ -154,22 +154,34 @@ class Node:
 
         output = promptLLM(args, prompts, schema=ClassifySchema, max_new_tokens=3000)
         
-        # Parse outputs with error handling
+        # Parse outputs with strict error handling
         output_dict = []
         for i, c in enumerate(output):
             try:
                 cleaned = clean_json_string(c)
                 if not cleaned or cleaned.strip() == '':
-                    print(f"WARNING: Empty output for prompt {i}, using empty class_labels")
-                    output_dict.append({'paper_id': i, 'class_options': [], 'class_labels': []})
+                    error_msg = (
+                        f"\n{'='*80}\n"
+                        f"CRITICAL ERROR: Empty output for prompt {i}\n"
+                        f"Raw output (FULL):\n{c}\n"
+                        f"{'='*80}\n"
+                    )
+                    print(error_msg)
+                    raise ValueError(error_msg)
                 else:
                     output_dict.append(json.loads(cleaned))
             except json.JSONDecodeError as e:
-                print(f"WARNING: JSON parse error for prompt {i}: {e}")
-                print(f"Raw output: {c[:200]}")
-                print(f"Cleaned output: {cleaned[:200] if cleaned else 'EMPTY'}")
-                # Return empty classification on error
-                output_dict.append({'paper_id': i, 'class_options': [], 'class_labels': []})
+                error_msg = (
+                    f"\n{'='*80}\n"
+                    f"CRITICAL ERROR: JSON parse error for prompt {i}: {e}\n"
+                    f"{'='*80}\n"
+                    f"Raw output (FULL):\n{c}\n"
+                    f"{'='*80}\n"
+                    f"Cleaned output (FULL):\n{cleaned if cleaned else 'EMPTY'}\n"
+                    f"{'='*80}\n"
+                )
+                print(error_msg)
+                raise RuntimeError(error_msg) from e
         
         class_options = [c for c in self.get_children()]
         class_map = {c:0 for c in self.get_children()}

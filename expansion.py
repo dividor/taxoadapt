@@ -52,6 +52,8 @@ def expandNodeWidth(args, node, id2node, label2node):
     all_node_labels = ", ".join(list(label2node.keys()))
 
     # FILTERING OF EXPANSION OUTPUTS
+    # Save original LLM setting
+    original_llm = args.llm
     args.llm = 'api'
     clustered_prompt = [constructPrompt(args, width_cluster_system_instruction, width_cluster_main_prompt(freq_options, node, ancestors, all_node_labels))]
     success = False
@@ -73,11 +75,20 @@ def expandNodeWidth(args, node, id2node, label2node):
             print(str(e))
         attempts += 1
     
-    args.llm = 'vllm'
+    # Restore original LLM setting
+    args.llm = original_llm
     
     if not success:
-        print(f'FAILED WIDTH EXPANSION!')
-        return []
+        error_msg = (
+            f"\n{'='*80}\n"
+            f"CRITICAL ERROR: Failed width expansion after {attempts} attempts!\n"
+            f"Node: {node.label} ({node.dimension})\n"
+            f"{'='*80}\n"
+            f"Last cluster_topics output (FULL):\n{cluster_topics if 'cluster_topics' in locals() else 'No output'}\n"
+            f"{'='*80}\n"
+        )
+        print(error_msg)
+        raise RuntimeError(error_msg)
     
     print('clusters:\n', cluster_outputs)
     cluster_outputs = cluster_outputs['new_cluster_topics']
@@ -130,7 +141,9 @@ def expandNodeDepth(args, node, id2node, label2node):
         ancestors = " -> ".join([ancestor.label for ancestor in node_ancestors])
     
     # identify potential subtopic options from list of papers
-    args.llm = 'vllm'
+    # Save original LLM setting
+    original_llm = args.llm
+    
     subtopic_prompts = [constructPrompt(args, depth_system_instruction, depth_main_prompt(paper, node, ancestors)) 
                    for paper in node.papers.values()]
     subtopic_outputs = promptLLM(args=args, prompts=subtopic_prompts, schema=DepthExpansionSchema, max_new_tokens=300, json_mode=True, temperature=0.6, top_p=0.99)
@@ -142,7 +155,8 @@ def expandNodeDepth(args, node, id2node, label2node):
     subtopic_outputs = [w for w in subtopic_outputs if w + f"_{node.dimension}" not in label2node]
 
     if len(subtopic_outputs) == 0:
-        return []
+        args.llm = original_llm
+        return [], False
     
     freq_options = dict(Counter(subtopic_outputs))
 
@@ -150,6 +164,7 @@ def expandNodeDepth(args, node, id2node, label2node):
 
     all_node_labels = ", ".join(list(label2node.keys()))
 
+    # Use api for clustering
     args.llm = 'api'
 
     prompts = [constructPrompt(args, depth_cluster_system_instruction, depth_cluster_main_prompt(freq_options, node, ancestors, all_node_labels))]
@@ -172,9 +187,20 @@ def expandNodeDepth(args, node, id2node, label2node):
             print(str(e))
 
         attempts += 1
+    
+    # Restore original LLM setting
+    args.llm = original_llm
     if not success:
-        print(f'FAILED DEPTH EXPANSION!')
-        return [], False
+        error_msg = (
+            f"\n{'='*80}\n"
+            f"CRITICAL ERROR: Failed depth expansion after {attempts} attempts!\n"
+            f"Node: {node.label} ({node.dimension})\n"
+            f"{'='*80}\n"
+            f"Last cluster_topics output (FULL):\n{cluster_topics if 'cluster_topics' in locals() else 'No output'}\n"
+            f"{'='*80}\n"
+        )
+        print(error_msg)
+        raise RuntimeError(error_msg)
 
     final_expansion = []
     cluster_outputs = cluster_outputs['new_cluster_topics']
