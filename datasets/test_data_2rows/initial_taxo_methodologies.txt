@@ -5,33 +5,33 @@ Level: 0
 Source: Initial
 ----------------------------------------
 Children:
-     Label: participatory_action_research
+     Label: qualitative_methods
      Dimension: methodologies
-     Description: A methodology that involves community members in the research process to ensure that the evaluation reflects their needs and perspectives.
+     Description: Methodologies that focus on understanding the experiences, perceptions, and contexts of individuals and communities through in-depth interviews, focus groups, and ethnographic research.
      Level: 1
      Source: Initial
      ----------------------------------------
-     Label: mixed_methods_evaluation
+     Label: quantitative_methods
      Dimension: methodologies
-     Description: An approach that combines qualitative and quantitative data collection and analysis methods to provide a comprehensive understanding of humanitarian interventions.
+     Description: Methodologies that involve the collection and analysis of numerical data to measure the impact, effectiveness, and efficiency of humanitarian interventions using statistical techniques and surveys.
      Level: 1
      Source: Initial
      ----------------------------------------
-     Label: realist_evaluation
+     Label: mixed-methods
      Dimension: methodologies
-     Description: A methodology that seeks to understand how context influences the outcomes of humanitarian programs by exploring the mechanisms and contexts that lead to specific results.
+     Description: Methodologies that combine both qualitative and quantitative approaches to provide a comprehensive understanding of humanitarian evaluation, integrating data from multiple sources and methods.
      Level: 1
      Source: Initial
      ----------------------------------------
-     Label: outcome_harvesting
+     Label: participatory_methods
      Dimension: methodologies
-     Description: A methodology focused on identifying, documenting, and interpreting changes in behavior, relationships, actions, or policies that can be attributed to a humanitarian intervention.
+     Description: Methodologies that engage affected communities and stakeholders in the evaluation process, ensuring that their voices and perspectives are central to the assessment and decision-making.
      Level: 1
      Source: Initial
      ----------------------------------------
-     Label: systems_mapping
+     Label: systems_thinking_methods
      Dimension: methodologies
-     Description: A methodology that uses visual and analytical tools to map the complex systems and interactions within a humanitarian context, helping to identify leverage points for effective intervention.
+     Description: Methodologies that use systems thinking to analyze the complex interactions and dynamics within humanitarian contexts, identifying leverage points for intervention and sustainable change.
      Level: 1
      Source: Initial
      ----------------------------------------

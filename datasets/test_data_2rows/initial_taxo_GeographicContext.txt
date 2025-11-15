@@ -1,0 +1,38 @@
+Label: humanitarian_evaluation
+Dimension: GeographicContext
+Description: None
+Level: 0
+Source: Initial
+----------------------------------------
+Children:
+     Label: urbanareas
+     Dimension: GeographicContext
+     Description: Evaluations conducted in densely populated urban settings, focusing on issues such as infrastructure, service delivery, and community resilience.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: ruralareas
+     Dimension: GeographicContext
+     Description: Evaluations conducted in less densely populated rural settings, often addressing challenges related to access to resources, healthcare, and education.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: fragilestates
+     Dimension: GeographicContext
+     Description: Evaluations conducted in countries with weak governance, political instability, and limited state capacity, often requiring a focus on peacebuilding and state strengthening.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: protractedcrises
+     Dimension: GeographicContext
+     Description: Evaluations conducted in situations of long-term humanitarian need, such as ongoing conflicts or prolonged displacement, where sustained support and adaptive strategies are crucial.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: naturaldisasters
+     Dimension: GeographicContext
+     Description: Evaluations conducted in the aftermath of natural disasters, such as earthquakes, floods, or hurricanes, focusing on immediate response, recovery, and resilience building.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+----------------------------------------

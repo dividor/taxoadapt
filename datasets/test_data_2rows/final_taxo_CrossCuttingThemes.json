@@ -1,0 +1,61 @@
+{
+    "label": "humanitarian_evaluation",
+    "description": null,
+    "level": 0,
+    "source": "initial",
+    "example_papers": [
+        [
+            0,
+            "Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023"
+        ],
+        [
+            1,
+            "Mid-term evaluation of the project \"Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)\""
+        ]
+    ],
+    "paper_ids": [
+        0,
+        1
+    ],
+    "children": [
+        {
+            "label": "gender_equality",
+            "description": "Evaluates how humanitarian programs address and promote gender equality, ensuring that both men and women have equal access to resources and opportunities.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "disability_inclusion",
+            "description": "Assesses the extent to which humanitarian efforts are inclusive of people with disabilities, ensuring their needs and rights are fully considered.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "climate_adaptation",
+            "description": "Examines how humanitarian interventions adapt to and mitigate the impacts of climate change, ensuring resilience and sustainability in vulnerable communities.",
+            "level": 1,
+            "source": "initial",
+            "example_papers": [
+                [
+                    1,
+                    "Mid-term evaluation of the project \"Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)\""
+                ]
+            ],
+            "paper_ids": [
+                1
+            ]
+        },
+        {
+            "label": "conflict_sensitivity",
+            "description": "Evaluates the impact of humanitarian actions on conflict dynamics, ensuring that interventions do not exacerbate tensions and contribute to peacebuilding.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "accountability_to_affected_populations",
+            "description": "Focuses on the mechanisms and practices that ensure humanitarian organizations are accountable to the communities they serve, promoting transparency and responsiveness.",
+            "level": 1,
+            "source": "initial"
+        }
+    ]
+}

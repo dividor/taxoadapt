@@ -1,0 +1,70 @@
+{
+    "label": "humanitarian_evaluation",
+    "description": null,
+    "level": 0,
+    "source": "initial",
+    "example_papers": [
+        [
+            0,
+            "Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023"
+        ],
+        [
+            1,
+            "Mid-term evaluation of the project \"Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)\""
+        ]
+    ],
+    "paper_ids": [
+        0,
+        1
+    ],
+    "children": [
+        {
+            "label": "coverage",
+            "description": "Assesses the extent to which the humanitarian response reaches the target population and meets their needs.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "appropriateness",
+            "description": "Evaluates whether the humanitarian interventions are suitable and relevant to the context and needs of the affected population.",
+            "level": 1,
+            "source": "initial",
+            "example_papers": [
+                [
+                    0,
+                    "Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023"
+                ]
+            ],
+            "paper_ids": [
+                0
+            ]
+        },
+        {
+            "label": "protection",
+            "description": "Focuses on ensuring that humanitarian actions do not cause harm and that the rights and safety of affected populations are protected.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "participation",
+            "description": "Measures the extent to which affected populations are involved in the planning, implementation, and monitoring of humanitarian activities.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "impact",
+            "description": "Assesses the positive and negative changes in the lives of affected populations as a result of the humanitarian intervention.",
+            "level": 1,
+            "source": "initial",
+            "example_papers": [
+                [
+                    1,
+                    "Mid-term evaluation of the project \"Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)\""
+                ]
+            ],
+            "paper_ids": [
+                1
+            ]
+        }
+    ]
+}

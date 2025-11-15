@@ -7,31 +7,31 @@ Source: Initial
 Children:
      Label: disaster_response_datasets
      Dimension: datasets
-     Description: Datasets specifically designed to support disaster response efforts, including data on natural disasters, conflict zones, and emergency medical needs.
+     Description: Datasets specifically designed to support disaster response efforts, including real-time data collection, damage assessment, and resource allocation.
      Level: 1
      Source: Initial
      ----------------------------------------
-     Label: humanitarian_aid_datasets
+     Label: humanitarian_aid_effectiveness_datasets
      Dimension: datasets
-     Description: Datasets focused on the distribution and effectiveness of humanitarian aid, including food, water, shelter, and medical supplies.
+     Description: Datasets that evaluate the effectiveness of humanitarian aid programs, focusing on impact, efficiency, and sustainability of interventions.
      Level: 1
      Source: Initial
      ----------------------------------------
-     Label: refugee_migration_datasets
+     Label: refugee_crisis_datasets
      Dimension: datasets
-     Description: Datasets that track the movement and needs of refugees and displaced persons, providing insights into migration patterns and humanitarian assistance.
+     Description: Datasets that document and analyze refugee crises, including population movements, living conditions, and access to essential services.
      Level: 1
      Source: Initial
      ----------------------------------------
-     Label: human_rights_violations_datasets
+     Label: conflict_zone_monitoring_datasets
      Dimension: datasets
-     Description: Datasets documenting instances of human rights violations, including data on abuses, legal actions, and advocacy efforts.
+     Description: Datasets used for monitoring and evaluating conditions in conflict zones, including security, displacement, and humanitarian needs.
      Level: 1
      Source: Initial
      ----------------------------------------
-     Label: socioeconomic_impact_datasets
+     Label: climate_resilience_datasets
      Dimension: datasets
-     Description: Datasets that assess the socioeconomic impacts of humanitarian crises, including data on poverty, education, and economic recovery.
+     Description: Datasets that assess the resilience of communities to climate-related disasters, focusing on adaptation strategies and vulnerability reduction.
      Level: 1
      Source: Initial
      ----------------------------------------

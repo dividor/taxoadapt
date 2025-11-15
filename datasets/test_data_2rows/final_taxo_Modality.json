@@ -1,0 +1,66 @@
+{
+    "label": "humanitarian_evaluation",
+    "description": null,
+    "level": 0,
+    "source": "initial",
+    "example_papers": [
+        [
+            0,
+            "Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023"
+        ],
+        [
+            1,
+            "Mid-term evaluation of the project \"Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)\""
+        ]
+    ],
+    "paper_ids": [
+        0,
+        1
+    ],
+    "children": [
+        {
+            "label": "cash_transfers",
+            "description": "Evaluations focused on the effectiveness and impact of providing monetary assistance directly to beneficiaries.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "in_kind_assistance",
+            "description": "Assessments of the provision of goods and services directly to those in need, such as food, clothing, and shelter.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "capacity_building",
+            "description": "Evaluations of programs designed to enhance the skills, knowledge, and resources of local organizations and communities.",
+            "level": 1,
+            "source": "initial",
+            "example_papers": [
+                [
+                    0,
+                    "Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023"
+                ],
+                [
+                    1,
+                    "Mid-term evaluation of the project \"Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)\""
+                ]
+            ],
+            "paper_ids": [
+                0,
+                1
+            ]
+        },
+        {
+            "label": "service_delivery",
+            "description": "Analyses of the efficiency and quality of services provided by humanitarian organizations, including healthcare, education, and water supply.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "protection_services",
+            "description": "Evaluations of interventions aimed at safeguarding the rights and well-being of vulnerable populations, such as refugees and internally displaced persons.",
+            "level": 1,
+            "source": "initial"
+        }
+    ]
+}

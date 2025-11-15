@@ -7,31 +7,31 @@ Source: Initial
 Children:
      Label: impact_assessment
      Dimension: tasks
-     Description: Evaluating the effects of humanitarian interventions on affected populations, including both intended and unintended outcomes.
-     Level: 1
-     Source: Initial
-     ----------------------------------------
-     Label: program_monitoring
-     Dimension: tasks
-     Description: Ongoing tracking and assessment of humanitarian programs to ensure they are meeting their objectives and making necessary adjustments.
+     Description: Evaluating the effects of humanitarian interventions on affected populations to determine their overall impact and effectiveness.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: needs_assessment
      Dimension: tasks
-     Description: Identifying and prioritizing the needs of affected populations to inform the design and implementation of humanitarian responses.
+     Description: Identifying the immediate and long-term needs of communities affected by crises to inform the design and implementation of appropriate humanitarian responses.
      Level: 1
      Source: Initial
      ----------------------------------------
-     Label: quality_assurance
+     Label: program_evaluation
      Dimension: tasks
-     Description: Ensuring that humanitarian aid meets established standards and best practices, including compliance with ethical guidelines and effectiveness criteria.
+     Description: Assessing the performance and outcomes of specific humanitarian programs to ensure they meet their intended goals and improve service delivery.
      Level: 1
      Source: Initial
      ----------------------------------------
-     Label: stakeholder_engagement
+     Label: monitoring_and_reporting
      Dimension: tasks
-     Description: Evaluating the involvement and feedback of various stakeholders, including beneficiaries, donors, and implementing organizations, in the humanitarian process.
+     Description: Continuously tracking and documenting the progress and activities of humanitarian efforts to ensure accountability and transparency.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: capacity_building_evaluation
+     Dimension: tasks
+     Description: Evaluating the effectiveness of initiatives aimed at strengthening the capacity of local organizations and communities to respond to and manage humanitarian crises.
      Level: 1
      Source: Initial
      ----------------------------------------

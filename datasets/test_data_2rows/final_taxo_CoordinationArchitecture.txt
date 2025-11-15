@@ -1,0 +1,42 @@
+Label: humanitarian_evaluation
+Dimension: CoordinationArchitecture
+Description: None
+Level: 0
+Source: Initial
+# of Papers: 2
+Example Papers: [(0, 'Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023'), (1, 'Mid-term evaluation of the project "Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)"')]
+----------------------------------------
+Children:
+     Label: clustersystem
+     Dimension: CoordinationArchitecture
+     Description: A coordination mechanism where humanitarian organizations are grouped into clusters based on their expertise to ensure a coherent and effective response.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: interagencycoordination
+     Dimension: CoordinationArchitecture
+     Description: A framework that facilitates collaboration and communication between different humanitarian agencies to avoid duplication of efforts and ensure a comprehensive response.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: cashworkinggroups
+     Dimension: CoordinationArchitecture
+     Description: Specialized coordination bodies that focus on the distribution and management of cash-based assistance to affected populations, ensuring efficient and equitable aid delivery.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: localcoordinationforums
+     Dimension: CoordinationArchitecture
+     Description: Platforms at the local level where community leaders, local NGOs, and international organizations come together to plan and coordinate humanitarian activities.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: governmentledcoordination
+     Dimension: CoordinationArchitecture
+     Description: A coordination structure where the government takes the lead in organizing and managing the humanitarian response, often involving multiple stakeholders and sectors.
+     Level: 1
+     Source: Initial
+     # of Papers: 2
+     Example Papers: [(0, 'Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023'), (1, 'Mid-term evaluation of the project "Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)"')]
+     ----------------------------------------
+----------------------------------------

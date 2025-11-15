@@ -7,31 +7,31 @@ Source: Initial
 Children:
      Label: disaster_response
      Dimension: real_world_domains
-     Description: Focuses on the application of methods to improve the efficiency and effectiveness of disaster response efforts, including emergency relief, resource allocation, and communication strategies.
+     Description: Focuses on the application of evaluation methods to improve the effectiveness and efficiency of disaster response efforts, including emergency relief and recovery operations.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: health_crisis_management
      Dimension: real_world_domains
-     Description: Involves the use of techniques to manage and mitigate the impact of health crises, such as pandemics, by enhancing surveillance, treatment, and public health interventions.
+     Description: Involves the assessment of strategies and interventions used during health crises, such as pandemics and epidemics, to enhance public health outcomes and resource allocation.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: refugee_support
      Dimension: real_world_domains
-     Description: Addresses the challenges faced by refugees and displaced persons, including access to basic needs, education, and integration into host communities.
+     Description: Examines the impact and effectiveness of programs and policies designed to support refugees, including education, healthcare, and integration services.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: food_security
      Dimension: real_world_domains
-     Description: Explores the application of methods to ensure sustainable food supply and access, particularly in regions affected by conflict, climate change, or economic instability.
+     Description: Evaluates initiatives aimed at ensuring access to sufficient, safe, and nutritious food for vulnerable populations, addressing issues like malnutrition and agricultural sustainability.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: human_rights_monitoring
      Dimension: real_world_domains
-     Description: Involves the use of techniques to monitor and report on human rights violations, advocate for justice, and support the protection of vulnerable populations.
+     Description: Involves the systematic evaluation of human rights conditions and the effectiveness of interventions to protect and promote human rights in conflict and post-conflict settings.
      Level: 1
      Source: Initial
      ----------------------------------------

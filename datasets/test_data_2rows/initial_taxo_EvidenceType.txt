@@ -1,0 +1,38 @@
+Label: humanitarian_evaluation
+Dimension: EvidenceType
+Description: None
+Level: 0
+Source: Initial
+----------------------------------------
+Children:
+     Label: quantitative_data
+     Dimension: EvidenceType
+     Description: Numerical data collected through surveys, measurements, and other structured methods to assess the impact and effectiveness of humanitarian interventions.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: qualitative_insights
+     Dimension: EvidenceType
+     Description: Non-numerical data gathered through interviews, focus groups, and observations to understand the experiences, perceptions, and needs of affected populations.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: participatory_data
+     Dimension: EvidenceType
+     Description: Data generated through participatory methods where affected communities are actively involved in the data collection and analysis process, ensuring their voices and perspectives are central to the evaluation.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: administrative_data
+     Dimension: EvidenceType
+     Description: Data derived from existing records and reports maintained by humanitarian organizations, governments, and other institutions to monitor and evaluate program performance and outcomes.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: satellite_imagery
+     Dimension: EvidenceType
+     Description: Geospatial data obtained from satellite images to assess the physical conditions and changes in affected areas, such as damage to infrastructure, displacement of populations, and environmental impacts.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+----------------------------------------

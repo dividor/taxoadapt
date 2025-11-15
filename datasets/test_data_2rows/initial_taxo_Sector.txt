@@ -1,0 +1,38 @@
+Label: humanitarian_evaluation
+Dimension: Sector
+Description: None
+Level: 0
+Source: Initial
+----------------------------------------
+Children:
+     Label: health
+     Dimension: Sector
+     Description: Evaluations focused on the effectiveness and impact of healthcare services and interventions in humanitarian settings.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: nutrition
+     Dimension: Sector
+     Description: Assessments of programs and initiatives aimed at improving nutritional status and addressing malnutrition in crisis-affected populations.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: shelter
+     Dimension: Sector
+     Description: Evaluations of the provision and quality of temporary and permanent housing solutions for displaced individuals and communities.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: education
+     Dimension: Sector
+     Description: Research on the effectiveness of educational programs and the impact of educational interventions in humanitarian contexts.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: water_and_sanitation
+     Dimension: Sector
+     Description: Evaluations of water supply, sanitation, and hygiene (WASH) programs to ensure safe and sustainable access to these essential services.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+----------------------------------------

@@ -1,0 +1,38 @@
+Label: humanitarian_evaluation
+Dimension: ResourceInputs
+Description: None
+Level: 0
+Source: Initial
+----------------------------------------
+Children:
+     Label: financial_resources
+     Dimension: ResourceInputs
+     Description: Financial resources encompass the monetary contributions and funding mechanisms used to support humanitarian efforts, including grants, donations, and budget allocations.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: human_resources
+     Dimension: ResourceInputs
+     Description: Human resources refer to the personnel and skilled labor involved in humanitarian operations, including volunteers, aid workers, and medical staff.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: material_goods
+     Dimension: ResourceInputs
+     Description: Material goods include essential supplies and commodities provided to affected populations, such as food, water, shelter materials, and medical supplies.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: technical_assistance
+     Dimension: ResourceInputs
+     Description: Technical assistance involves the provision of specialized skills and expertise to enhance the effectiveness of humanitarian interventions, such as engineering, logistics, and health services.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: information_systems
+     Dimension: ResourceInputs
+     Description: Information systems are the technological and data management tools used to coordinate and optimize humanitarian responses, including communication networks, databases, and monitoring platforms.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+----------------------------------------

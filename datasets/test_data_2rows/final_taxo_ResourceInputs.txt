@@ -1,0 +1,42 @@
+Label: humanitarian_evaluation
+Dimension: ResourceInputs
+Description: None
+Level: 0
+Source: Initial
+# of Papers: 2
+Example Papers: [(0, 'Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023'), (1, 'Mid-term evaluation of the project "Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)"')]
+----------------------------------------
+Children:
+     Label: financial_resources
+     Dimension: ResourceInputs
+     Description: Financial resources encompass the monetary contributions and funding mechanisms used to support humanitarian efforts, including grants, donations, and budget allocations.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: human_resources
+     Dimension: ResourceInputs
+     Description: Human resources refer to the personnel and volunteers involved in humanitarian activities, including skilled professionals, local community members, and international aid workers.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: material_goods
+     Dimension: ResourceInputs
+     Description: Material goods include essential supplies and equipment necessary for humanitarian relief, such as food, water, shelter materials, and medical supplies.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: technical_assistance
+     Dimension: ResourceInputs
+     Description: Technical assistance involves the provision of specialized skills and expertise to support humanitarian operations, including engineering, healthcare, and logistics services.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: information_systems
+     Dimension: ResourceInputs
+     Description: Information systems are the technological and data management tools used to coordinate and optimize humanitarian responses, including communication networks, databases, and monitoring platforms.
+     Level: 1
+     Source: Initial
+     # of Papers: 1
+     Example Papers: [(0, 'Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023')]
+     ----------------------------------------
+----------------------------------------

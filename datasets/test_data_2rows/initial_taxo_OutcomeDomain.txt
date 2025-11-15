@@ -1,0 +1,38 @@
+Label: humanitarian_evaluation
+Dimension: OutcomeDomain
+Description: None
+Level: 0
+Source: Initial
+----------------------------------------
+Children:
+     Label: livelihoods
+     Dimension: OutcomeDomain
+     Description: This domain focuses on the economic and social activities that individuals and communities engage in to secure a sustainable and dignified life.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: resilience
+     Dimension: OutcomeDomain
+     Description: This domain assesses the ability of individuals, communities, and systems to withstand, adapt to, and recover from shocks and stresses.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: well-being
+     Dimension: OutcomeDomain
+     Description: This domain evaluates the overall physical, mental, and social health and happiness of individuals and communities.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: program_effectiveness
+     Dimension: OutcomeDomain
+     Description: This domain measures the extent to which humanitarian programs achieve their intended outcomes and goals, including efficiency, impact, and sustainability.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: behavioral_change
+     Dimension: OutcomeDomain
+     Description: This domain examines changes in attitudes, behaviors, and practices among individuals and communities as a result of humanitarian interventions.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+----------------------------------------

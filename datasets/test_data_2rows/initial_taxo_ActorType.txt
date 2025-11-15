@@ -1,0 +1,38 @@
+Label: humanitarian_evaluation
+Dimension: ActorType
+Description: None
+Level: 0
+Source: Initial
+----------------------------------------
+Children:
+     Label: un_agencies
+     Dimension: ActorType
+     Description: UN agencies are international organizations that conduct or are evaluated in humanitarian responses, focusing on global issues such as health, education, and emergency relief.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: international_ngos
+     Dimension: ActorType
+     Description: International NGOs are non-governmental organizations that operate across multiple countries, providing humanitarian assistance and support in various sectors like disaster response, development, and advocacy.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: local_ngos
+     Dimension: ActorType
+     Description: Local NGOs are non-governmental organizations based and operating within a specific country or region, often providing context-specific humanitarian aid and support to local communities.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: government_agencies
+     Dimension: ActorType
+     Description: Government agencies are official bodies of national or local governments that are involved in humanitarian responses, including policy-making, funding, and direct service delivery.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: private_sector_actors
+     Dimension: ActorType
+     Description: Private sector actors are companies and businesses that contribute to humanitarian efforts through donations, expertise, technology, and other resources, often in partnership with other organizations.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+----------------------------------------

@@ -1,0 +1,38 @@
+Label: humanitarian_evaluation
+Dimension: CoordinationArchitecture
+Description: None
+Level: 0
+Source: Initial
+----------------------------------------
+Children:
+     Label: clustersystem
+     Dimension: CoordinationArchitecture
+     Description: A coordination mechanism where humanitarian organizations are grouped into clusters based on their expertise to ensure a coherent and effective response.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: interagencycoordination
+     Dimension: CoordinationArchitecture
+     Description: A framework that facilitates collaboration and communication between different humanitarian agencies to avoid duplication of efforts and ensure a comprehensive response.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: cashworkinggroups
+     Dimension: CoordinationArchitecture
+     Description: Specialized coordination bodies that focus on the distribution and management of cash-based assistance to ensure it is delivered effectively and efficiently.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: localcoordinationforums
+     Dimension: CoordinationArchitecture
+     Description: Platforms at the local level where various stakeholders, including NGOs, community leaders, and local authorities, come together to coordinate humanitarian activities.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: governmentledcoordination
+     Dimension: CoordinationArchitecture
+     Description: A coordination structure led by the national or local government, ensuring that humanitarian efforts align with government policies and priorities.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+----------------------------------------

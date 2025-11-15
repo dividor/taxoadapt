@@ -1,0 +1,40 @@
+Label: humanitarian_evaluation
+Dimension: Sector
+Description: None
+Level: 0
+Source: Initial
+# of Papers: 2
+Example Papers: [(0, 'Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023'), (1, 'Mid-term evaluation of the project "Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)"')]
+----------------------------------------
+Children:
+     Label: health
+     Dimension: Sector
+     Description: Evaluations of programs and interventions aimed at improving physical and mental health outcomes in crisis-affected populations.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: nutrition
+     Dimension: Sector
+     Description: Assessments of initiatives designed to ensure adequate nutrition and prevent malnutrition in vulnerable communities during and after humanitarian crises.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: shelter
+     Dimension: Sector
+     Description: Reviews of strategies and practices for providing safe, dignified, and sustainable shelter solutions to individuals and families displaced by disasters or conflicts.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: education
+     Dimension: Sector
+     Description: Analyses of educational programs and policies that aim to ensure access to quality education for children and youth in emergency settings.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: water_and_sanitation
+     Dimension: Sector
+     Description: Evaluations of water, sanitation, and hygiene (WASH) programs to ensure safe and sustainable access to clean water and proper sanitation facilities in crisis-affected areas.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+----------------------------------------

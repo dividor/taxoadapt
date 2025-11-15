@@ -1,0 +1,44 @@
+Label: humanitarian_evaluation
+Dimension: EvaluationType
+Description: None
+Level: 0
+Source: Initial
+# of Papers: 2
+Example Papers: [(0, 'Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023'), (1, 'Mid-term evaluation of the project "Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)"')]
+----------------------------------------
+Children:
+     Label: impact_evaluation
+     Dimension: EvaluationType
+     Description: Assesses the long-term effects of humanitarian interventions on the target population, focusing on outcomes and changes brought about by the intervention.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: process_evaluation
+     Dimension: EvaluationType
+     Description: Examines the implementation and delivery of humanitarian programs, identifying strengths and weaknesses in the processes and procedures used.
+     Level: 1
+     Source: Initial
+     # of Papers: 1
+     Example Papers: [(0, 'Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023')]
+     ----------------------------------------
+     Label: formative_evaluation
+     Dimension: EvaluationType
+     Description: Conducted during the planning and early stages of a humanitarian intervention to improve the design and implementation of the program.
+     Level: 1
+     Source: Initial
+     # of Papers: 1
+     Example Papers: [(1, 'Mid-term evaluation of the project "Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)"')]
+     ----------------------------------------
+     Label: real_time_evaluation
+     Dimension: EvaluationType
+     Description: Provides immediate feedback during the course of a humanitarian response, allowing for timely adjustments and improvements to the intervention.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: cost_effectiveness_analysis
+     Dimension: EvaluationType
+     Description: Evaluates the economic efficiency of humanitarian interventions by comparing the costs of different programs to their outcomes, aiming to maximize the benefits per unit of cost.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+----------------------------------------

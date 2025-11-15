@@ -1,0 +1,38 @@
+Label: humanitarian_evaluation
+Dimension: RecommendationType
+Description: None
+Level: 0
+Source: Initial
+----------------------------------------
+Children:
+     Label: policy_recommendations
+     Dimension: RecommendationType
+     Description: Recommendations aimed at shaping or revising policies to improve the effectiveness and efficiency of humanitarian responses.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: programmatic_adjustments
+     Dimension: RecommendationType
+     Description: Suggestions for modifying existing humanitarian programs to better meet the needs of affected populations and enhance their impact.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: methodological_innovations
+     Dimension: RecommendationType
+     Description: Proposals for new or improved methods and tools to enhance the accuracy and reliability of humanitarian evaluations and assessments.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: scaling_strategies
+     Dimension: RecommendationType
+     Description: Strategies for expanding successful humanitarian interventions to reach a larger number of beneficiaries or to address broader geographic areas.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: advocacy_priorities
+     Dimension: RecommendationType
+     Description: Identifications of key advocacy issues and priorities to influence decision-makers and stakeholders in the humanitarian sector.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+----------------------------------------

@@ -1,0 +1,29 @@
+# Dimension Definitions File
+# Format: dimension_name|||definition text
+# Lines starting with # are comments and will be ignored
+# Each dimension used in your analysis MUST be defined here
+
+# This single file is used for both:
+# 1. Initial taxonomy construction (understanding what the dimension is about)
+# 2. Taxonomy expansion (identifying types/subtypes within the dimension)
+
+# ===== DEFAULT NLP DIMENSIONS =====
+tasks|||Task: we assume that all papers are associated with a specific task(s). Always output "Task" as one of the paper types unless you are absolutely sure the paper does not address any task.
+methodologies|||Methodology: a paper that introduces, explains, or refines a method or approach, providing theoretical foundations, implementation details, and empirical evaluations to advance the state-of-the-art or solve specific problems.
+datasets|||Datasets: introduces a new dataset, detailing its creation, structure, and intended use, while providing analysis or benchmarks to demonstrate its relevance and utility. It focuses on advancing research by addressing gaps in existing datasets/performance of SOTA models or enabling new applications in the field.
+evaluation_methods|||Evaluation Methods: a paper that assesses the performance, limitations, or biases of models, methods, or datasets using systematic experiments or analyses. It focuses on benchmarking, comparative studies, or proposing new evaluation metrics or frameworks to provide insights and improve understanding in the field.
+real_world_domains|||Real-World Domains: demonstrates the use of techniques to solve specific, real-world problems or address specific domain challenges. It focuses on practical implementation, impact, and insights gained from applying methods in various contexts. Examples include: product recommendation systems, medical record summarization, etc.
+
+# ===== HUMANITARIAN EVALUATION DIMENSIONS (EXAMPLES) =====
+Sector|||Sector: the specific humanitarian sector or domain that the research addresses, such as health, nutrition, shelter, education, protection, water and sanitation, or food security. Papers are classified based on the primary sector they contribute to or evaluate.
+Modality|||Modality: the type or form of humanitarian intervention being evaluated, such as cash transfers, in-kind assistance, capacity building, service delivery, advocacy, or protection services. This dimension captures how aid is delivered and what mechanisms are used.
+OutcomeDomain|||OutcomeDomain: the specific area of impact or change being measured in humanitarian evaluation, such as livelihoods, resilience, well-being, program effectiveness, behavioral change, or system strengthening. This focuses on what outcomes are being assessed.
+EvaluationType|||EvaluationType: the methodological approach used for evaluation, such as impact evaluation, process evaluation, formative evaluation, summative evaluation, real-time evaluation, cost-effectiveness analysis, or mixed-methods evaluation. This dimension categorizes papers by their evaluation methodology.
+CrossCuttingThemes|||CrossCuttingThemes: overarching themes that cut across multiple sectors, such as gender equality, disability inclusion, climate adaptation, conflict sensitivity, localization, accountability to affected populations, or environmental sustainability. These are horizontal concerns that apply across different interventions.
+GeographicContext|||GeographicContext: the geographic setting or context of the evaluation, such as urban vs. rural, fragile states, protracted crises, natural disasters, conflict zones, or specific regional contexts (e.g., Sub-Saharan Africa, Middle East, Asia-Pacific). This captures where evaluations take place.
+ActorType|||ActorType: the type of organization or actor conducting or being evaluated, such as UN agencies, international NGOs, local NGOs, government agencies, private sector actors, community-based organizations, or consortia. This identifies who is involved in the humanitarian response.
+ResourceInputs|||ResourceInputs: the types of resources being provided or evaluated, such as financial resources, human resources, material goods, technical assistance, information systems, or infrastructure. This dimension focuses on what inputs are being delivered.
+EvaluationCriteria|||EvaluationCriteria: the evaluation criteria being applied, based on frameworks like OECD-DAC criteria (relevance, effectiveness, efficiency, impact, sustainability, coherence) or humanitarian-specific criteria (coverage, appropriateness, protection, participation). This captures the lens through which evaluations are conducted.
+CoordinationArchitecture|||CoordinationArchitecture: the coordination mechanisms and structures in place, such as cluster system, inter-agency coordination, cash working groups, local coordination forums, or government-led coordination. This examines how different actors work together.
+EvidenceType|||EvidenceType: the type of evidence being generated or used in the evaluation, such as quantitative data, qualitative insights, participatory data, administrative data, satellite imagery, social media data, or indigenous knowledge. This categorizes papers by their evidence base.
+RecommendationType|||RecommendationType: the nature of recommendations or findings produced, such as policy recommendations, programmatic adjustments, methodological innovations, scaling strategies, or advocacy priorities. This captures the actionable outputs of evaluations.

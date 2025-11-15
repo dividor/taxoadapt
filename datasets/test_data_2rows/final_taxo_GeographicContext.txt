@@ -1,0 +1,42 @@
+Label: humanitarian_evaluation
+Dimension: GeographicContext
+Description: None
+Level: 0
+Source: Initial
+# of Papers: 2
+Example Papers: [(0, 'Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023'), (1, 'Mid-term evaluation of the project "Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)"')]
+----------------------------------------
+Children:
+     Label: urbanareas
+     Dimension: GeographicContext
+     Description: Evaluations conducted in densely populated cities and towns, focusing on issues such as infrastructure, access to services, and community resilience.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: ruralareas
+     Dimension: GeographicContext
+     Description: Evaluations conducted in less populated, often agricultural regions, focusing on challenges like limited access to resources and services, and livelihood support.
+     Level: 1
+     Source: Initial
+     # of Papers: 1
+     Example Papers: [(1, 'Mid-term evaluation of the project "Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)"')]
+     ----------------------------------------
+     Label: fragilestates
+     Dimension: GeographicContext
+     Description: Evaluations conducted in countries with weak governance, political instability, and limited state capacity, often requiring a focus on peacebuilding and state strengthening.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: protractedcrises
+     Dimension: GeographicContext
+     Description: Evaluations conducted in long-term crisis situations, such as ongoing conflicts or prolonged displacement, focusing on sustained humanitarian assistance and development efforts.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: naturaldisasters
+     Dimension: GeographicContext
+     Description: Evaluations conducted in areas affected by sudden natural events like earthquakes, floods, or hurricanes, focusing on emergency response, recovery, and disaster risk reduction.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+----------------------------------------

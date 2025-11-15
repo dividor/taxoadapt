@@ -200,24 +200,44 @@ def main(args):
 
     dags = {dim:DAG(root=root, dim=dim) for dim, root in roots.items()}
 
-    # do for internal collection
-
-    prompts = [constructPrompt(args, type_cls_system_instruction, type_cls_main_prompt(paper)) for paper in internal_collection.values()]
-    outputs = promptLLM(args=args, prompts=prompts, schema=TypeClsSchema, max_new_tokens=500, json_mode=True, temperature=0.1, top_p=0.99)
-    outputs = [json.loads(clean_json_string(c)) for c in outputs]
-
-    for r in roots:
-        roots[r].papers = {}
-    type_dist = {dim:[] for dim in args.dimensions}
-    for p_id, out in enumerate(outputs):
-        internal_collection[p_id].labels = {}
-        for key, val in out.items():
-            if val:
-                type_dist[key].append(internal_collection[p_id])
-                internal_collection[p_id].labels[key] = []
-                roots[key].papers[p_id] = internal_collection[p_id]
+    # Check if we're using default NLP dimensions or custom dimensions
+    default_dimensions = {"tasks", "methodologies", "datasets", "evaluation_methods", "real_world_domains"}
+    using_default_dims = set(args.dimensions) == default_dimensions
     
-    print(str({k:len(v) for k,v in type_dist.items()}))
+    if using_default_dims:
+        # For default dimensions, use the type classification schema (original algorithm)
+        prompts = [constructPrompt(args, type_cls_system_instruction, type_cls_main_prompt(paper)) for paper in internal_collection.values()]
+        outputs = promptLLM(args=args, prompts=prompts, schema=TypeClsSchema, max_new_tokens=500, json_mode=True, temperature=0.1, top_p=0.99)
+        outputs = [json.loads(clean_json_string(c)) for c in outputs]
+
+        for r in roots:
+            roots[r].papers = {}
+        type_dist = {dim:[] for dim in args.dimensions}
+        for p_id, out in enumerate(outputs):
+            internal_collection[p_id].labels = {}
+            for key, val in out.items():
+                if val:
+                    type_dist[key].append(internal_collection[p_id])
+                    internal_collection[p_id].labels[key] = []
+                    roots[key].papers[p_id] = internal_collection[p_id]
+        
+        print(str({k:len(v) for k,v in type_dist.items()}))
+    else:
+        # For custom dimensions, assign all papers to all dimensions
+        # (no pre-classification by paper type, all papers go through all taxonomies)
+        print("Using custom dimensions - all papers will be classified through each taxonomy")
+        for r in roots:
+            roots[r].papers = {}
+        type_dist = {dim:[] for dim in args.dimensions}
+        
+        for p_id, paper in enumerate(internal_collection.values()):
+            paper.labels = {}
+            for dim in args.dimensions:
+                type_dist[dim].append(paper)
+                paper.labels[dim] = []
+                roots[dim].papers[p_id] = paper
+        
+        print(str({k:len(v) for k,v in type_dist.items()}))
 
 
     # for each node, classify its papers for the children or perform depth expansion
@@ -284,6 +304,8 @@ if __name__ == "__main__":
                        help='Number of initial levels in the taxonomy')
     parser.add_argument('--max_density', type=int, default=40,
                        help='Maximum density of papers per node')
+    parser.add_argument('--dimensions_file', type=str, default='dimensions_definitions.txt',
+                       help='Path to dimensions definitions file (default: dimensions_definitions.txt)')
     
     # Excel sheet arguments (alternative to --dataset)
     parser.add_argument('--dataset_sheet', type=str, default=None,
@@ -297,7 +319,25 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
 
-    args.dimensions = ["tasks", "datasets", "methodologies", "evaluation_methods", "real_world_domains"]
+    # Load dimensions from dimensions file
+    if not os.path.exists(args.dimensions_file):
+        raise ValueError(f"Dimensions file not found: {args.dimensions_file}")
+    
+    dimensions = []
+    with open(args.dimensions_file, 'r') as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith('#') and '|||' in line:
+                parts = line.split('|||', 1)
+                if len(parts) == 2:
+                    dim_name = parts[0].strip()
+                    dimensions.append(dim_name)
+    
+    if not dimensions:
+        raise ValueError(f"No dimensions found in {args.dimensions_file}. Please add at least one dimension.")
+    
+    args.dimensions = dimensions
+    print(f"Loaded {len(dimensions)} dimensions from {args.dimensions_file}: {', '.join(dimensions)}")
 
     # Set data directory based on dataset source
     if args.dataset_sheet:

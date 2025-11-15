@@ -25,7 +25,7 @@ Children:
      ----------------------------------------
      Label: participatory_evaluation
      Dimension: evaluation_methods
-     Description: Involves beneficiaries and stakeholders in the evaluation process to ensure that their perspectives and experiences are considered.
+     Description: Involves beneficiaries and stakeholders in the evaluation process to provide a more comprehensive and inclusive assessment of humanitarian efforts.
      Level: 1
      Source: Initial
      ----------------------------------------

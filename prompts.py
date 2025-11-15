@@ -1,6 +1,7 @@
 from pydantic import BaseModel, conset, conlist, StringConstraints, Field
 from typing_extensions import Annotated
 from typing import Dict
+import os
 
 class NodeSchema(BaseModel):
     description: Annotated[str, StringConstraints(strip_whitespace=True)]
@@ -15,14 +16,31 @@ class EnrichSchema(BaseModel):
     id: Annotated[str, StringConstraints(strip_whitespace=True)]
     commonsense_key_phrases: conset(str, min_length=20, max_length=50)
     commonsense_sentences: conset(str, min_length=10, max_length=50)
-# NLP
-dimension_definitions = {
-    'tasks': """Task: we assume that all papers are associated with a specific task(s). Always output "Task" as one of the paper types unless you are absolutely sure the paper does not address any task.""",
-    'methodologies': """Methodology: a paper that introduces, explains, or refines a method or approach, providing theoretical foundations, implementation details, and empirical evaluations to advance the state-of-the-art or solve specific problems.""",
-    'datasets': """Datasets: introduces a new dataset, detailing its creation, structure, and intended use, while providing analysis or benchmarks to demonstrate its relevance and utility. It focuses on advancing research by addressing gaps in existing datasets/performance of SOTA models or enabling new applications in the field.""",
-    'evaluation_methods': """Evaluation Methods: a paper that assesses the performance, limitations, or biases of models, methods, or datasets using systematic experiments or analyses. It focuses on benchmarking, comparative studies, or proposing new evaluation metrics or frameworks to provide insights and improve understanding in the field.""",
-    'real_world_domains': """Real-World Domains: demonstrates the use of techniques to solve specific, real-world problems or address specific domain challenges. It focuses on practical implementation, impact, and insights gained from applying methods in various contexts. Examples include: product recommendation systems, medical record summarization, etc."""
-    }
+
+def load_dimension_definitions(filepath='dimensions_definitions.txt'):
+    """
+    Load dimension definitions from a text file.
+    Format: dimension_name|||definition text
+    One dimension per line.
+    """
+    definitions = {}
+    if os.path.exists(filepath):
+        with open(filepath, 'r') as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith('#') and '|||' in line:
+                    parts = line.split('|||', 1)
+                    if len(parts) == 2:
+                        dim_name = parts[0].strip()
+                        dim_def = parts[1].strip()
+                        definitions[dim_name] = dim_def
+    return definitions
+
+# Load dimension definitions from file
+dimension_definitions = load_dimension_definitions()
+
+# Use dimension_definitions for both initial taxonomy and node expansion
+node_dimension_definitions = dimension_definitions
 
 # bio
 # dimension_definitions = {
@@ -37,14 +55,7 @@ dimension_definitions = {
 #     'evaluation_methods': """Evaluation Methods: a paper which systematically evaluates biological techniques, datasets, or computational methods, using benchmarking, comparative analyses, or novel evaluation metrics, to provide deeper insights into their effectiveness, limitations, or biases, thereby enhancing understanding and guiding future research."""
 # }
 
-# NLP
-node_dimension_definitions = {
-    'tasks': """Defines and categorizes research efforts aimed at solving specific problems or objectives within a given field, such as classification, prediction, or optimization.""",
-    'methodologies': """Types of techniques, models, or approaches used to address various challenges, including algorithmic innovations, frameworks, and optimization strategies.""",
-    'datasets': """Types of methods to structure data collections used in research, including ways to curate or analyze datasets, detailing their properties, intended use, and role in advancing the field.""",
-    'evaluation_methods': """Types of methods for assessing the performance of models, datasets, or techniques, including new metrics, benchmarking techniques, or comparative performance studies.""",
-    'real_world_domains': """Types of practical or industry-specific domains in which techniques and methodologies can be applied, exploring implementation, impact, and challenges of real-world problems."""
-}
+# Removed separate node_dimension_definitions loading - now uses same as dimension_definitions
 # node_dimension_definitions = {
 #     'experimental_methods': """Types of experimental techniques, protocols, laboratory procedures, or biological assays introduced or significantly refined, detailing their design, validation, and implementation to improve accuracy, reproducibility, or effectiveness in biological research.""",
 
@@ -62,6 +73,10 @@ def multi_dim_prompt(node):
     topic = node.label
     ancestors = ", ".join([ancestor.label for ancestor in node.get_ancestors()])
 
+    # Dimension must be defined in dimension_definitions
+    if node.dimension not in dimension_definitions:
+        raise ValueError(f"Dimension '{node.dimension}' not found in dimensions_definitions.txt. Please add it to the file.")
+    
     system_instruction = f'You are a helpful assistant that constructs taxonomies for a given root topic: {topic} {"" if ancestors == "" else " (relevant to" + ancestors + ")"} (types of {node.dimension}). Keep in mind that research papers will be mapped to the nodes within your constructed taxonomy. We define {node.dimension} below:\n{dimension_definitions[node.dimension]}\n'
 
     main_prompt = f'Your root_topic is: {topic}\nA subcategory is a specific division within a broader category that organizes related items or concepts more precisely. Output up to 5 children, subcategories that are types of {node.dimension} which fall under {topic} and generate corresponding sentence-long descriptions for each. Make sure each type is unique to the topics: {topic}, {ancestors}.'
@@ -837,6 +852,10 @@ class WidthExpansionSchema(BaseModel):
 
 
 def width_main_prompt(paper, node, ancestors, nl='\n'):
+   # Node dimension must be defined in dimension_definitions
+   if node.dimension not in dimension_definitions:
+       raise ValueError(f"Dimension '{node.dimension}' not found in dimensions_definitions.txt. Please add it to the file.")
+   
    out = f"""
 <input>
 <parent_node>
@@ -891,6 +910,10 @@ class WidthClusterListSchema(BaseModel):
 
 
 def width_cluster_main_prompt(options, node, ancestors, all_node_labels, nl='\n'):
+  # Node dimension must be defined in node_dimension_definitions
+  if node.dimension not in node_dimension_definitions:
+      raise ValueError(f"Node dimension '{node.dimension}' not found in node_dimension_definitions. Please add it to node_dimensions_definitions.txt")
+  
   out = f"""
 <input>
 <parent_node>
@@ -956,6 +979,10 @@ class DepthExpansionSchema(BaseModel):
   new_subtopic_label: Annotated[str, StringConstraints(strip_whitespace=True, max_length=100)]
 
 def depth_main_prompt(paper, node, ancestors, nl='\n'):
+   # Node dimension must be defined in dimension_definitions
+   if node.dimension not in dimension_definitions:
+       raise ValueError(f"Dimension '{node.dimension}' not found in dimensions_definitions.txt. Please add it to the file.")
+   
    out = f"""
 <input>
 <parent_node>
@@ -1005,6 +1032,10 @@ class DepthClusterListSchema(BaseModel):
 
 
 def depth_cluster_main_prompt(options, node, ancestors, all_node_labels):
+  # Node dimension must be defined in node_dimension_definitions
+  if node.dimension not in node_dimension_definitions:
+      raise ValueError(f"Node dimension '{node.dimension}' not found in node_dimension_definitions. Please add it to node_dimensions_definitions.txt")
+  
   out = f"""
 <input>
 <parent_node>

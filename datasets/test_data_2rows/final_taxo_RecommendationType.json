@@ -1,0 +1,70 @@
+{
+    "label": "humanitarian_evaluation",
+    "description": null,
+    "level": 0,
+    "source": "initial",
+    "example_papers": [
+        [
+            0,
+            "Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023"
+        ],
+        [
+            1,
+            "Mid-term evaluation of the project \"Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)\""
+        ]
+    ],
+    "paper_ids": [
+        0,
+        1
+    ],
+    "children": [
+        {
+            "label": "policy_recommendations",
+            "description": "Recommendations aimed at influencing government or organizational policies to improve humanitarian response and effectiveness.",
+            "level": 1,
+            "source": "initial",
+            "example_papers": [
+                [
+                    0,
+                    "Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023"
+                ]
+            ],
+            "paper_ids": [
+                0
+            ]
+        },
+        {
+            "label": "programmatic_adjustments",
+            "description": "Suggestions for modifying existing humanitarian programs to enhance their impact, efficiency, and sustainability.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "methodological_innovations",
+            "description": "Proposals for new or improved methods and tools to better assess and evaluate humanitarian interventions and outcomes.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "scaling_strategies",
+            "description": "Strategies to expand successful humanitarian programs to reach a larger population or geographic area.",
+            "level": 1,
+            "source": "initial",
+            "example_papers": [
+                [
+                    1,
+                    "Mid-term evaluation of the project \"Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)\""
+                ]
+            ],
+            "paper_ids": [
+                1
+            ]
+        },
+        {
+            "label": "advocacy_priorities",
+            "description": "Identifying key areas and issues for advocacy to raise awareness and mobilize support for humanitarian causes and needs.",
+            "level": 1,
+            "source": "initial"
+        }
+    ]
+}

@@ -1,0 +1,61 @@
+{
+    "label": "humanitarian_evaluation",
+    "description": null,
+    "level": 0,
+    "source": "initial",
+    "example_papers": [
+        [
+            0,
+            "Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023"
+        ],
+        [
+            1,
+            "Mid-term evaluation of the project \"Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)\""
+        ]
+    ],
+    "paper_ids": [
+        0,
+        1
+    ],
+    "children": [
+        {
+            "label": "financial_resources",
+            "description": "Financial resources encompass the monetary contributions and funding mechanisms used to support humanitarian efforts, including grants, donations, and budget allocations.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "human_resources",
+            "description": "Human resources refer to the personnel and volunteers involved in humanitarian activities, including skilled professionals, local community members, and international aid workers.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "material_goods",
+            "description": "Material goods include essential supplies and equipment necessary for humanitarian relief, such as food, water, shelter materials, and medical supplies.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "technical_assistance",
+            "description": "Technical assistance involves the provision of specialized skills and expertise to support humanitarian operations, including engineering, healthcare, and logistics services.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "information_systems",
+            "description": "Information systems are the technological and data management tools used to coordinate and optimize humanitarian responses, including communication networks, databases, and monitoring platforms.",
+            "level": 1,
+            "source": "initial",
+            "example_papers": [
+                [
+                    0,
+                    "Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023"
+                ]
+            ],
+            "paper_ids": [
+                0
+            ]
+        }
+    ]
+}

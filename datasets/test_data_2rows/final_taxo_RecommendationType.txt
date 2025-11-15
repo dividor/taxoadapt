@@ -1,0 +1,44 @@
+Label: humanitarian_evaluation
+Dimension: RecommendationType
+Description: None
+Level: 0
+Source: Initial
+# of Papers: 2
+Example Papers: [(0, 'Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023'), (1, 'Mid-term evaluation of the project "Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)"')]
+----------------------------------------
+Children:
+     Label: policy_recommendations
+     Dimension: RecommendationType
+     Description: Recommendations aimed at influencing government or organizational policies to improve humanitarian response and effectiveness.
+     Level: 1
+     Source: Initial
+     # of Papers: 1
+     Example Papers: [(0, 'Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023')]
+     ----------------------------------------
+     Label: programmatic_adjustments
+     Dimension: RecommendationType
+     Description: Suggestions for modifying existing humanitarian programs to enhance their impact, efficiency, and sustainability.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: methodological_innovations
+     Dimension: RecommendationType
+     Description: Proposals for new or improved methods and tools to better assess and evaluate humanitarian interventions and outcomes.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: scaling_strategies
+     Dimension: RecommendationType
+     Description: Strategies to expand successful humanitarian programs to reach a larger population or geographic area.
+     Level: 1
+     Source: Initial
+     # of Papers: 1
+     Example Papers: [(1, 'Mid-term evaluation of the project "Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)"')]
+     ----------------------------------------
+     Label: advocacy_priorities
+     Dimension: RecommendationType
+     Description: Identifying key areas and issues for advocacy to raise awareness and mobilize support for humanitarian causes and needs.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+----------------------------------------

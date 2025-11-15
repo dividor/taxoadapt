@@ -1,0 +1,38 @@
+Label: humanitarian_evaluation
+Dimension: Modality
+Description: None
+Level: 0
+Source: Initial
+----------------------------------------
+Children:
+     Label: cash_transfers
+     Dimension: Modality
+     Description: Evaluations of programs that provide direct monetary assistance to individuals or households to meet their basic needs or support economic activities.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: in_kind_assistance
+     Dimension: Modality
+     Description: Evaluations of programs that provide goods or services directly to beneficiaries, such as food, shelter, or medical supplies, to address immediate needs.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: capacity_building
+     Dimension: Modality
+     Description: Evaluations of programs aimed at enhancing the skills, knowledge, and organizational capabilities of local communities, NGOs, or government institutions to improve their resilience and self-reliance.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: service_delivery
+     Dimension: Modality
+     Description: Evaluations of programs that focus on the provision of essential services, such as healthcare, education, and water and sanitation, to ensure sustainable and equitable access for vulnerable populations.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: protection_services
+     Dimension: Modality
+     Description: Evaluations of programs designed to protect individuals and communities from violence, abuse, exploitation, and other forms of harm, ensuring their rights and dignity are upheld.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+----------------------------------------

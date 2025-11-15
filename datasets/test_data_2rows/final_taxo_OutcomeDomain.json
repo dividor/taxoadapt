@@ -19,8 +19,14 @@
     ],
     "children": [
         {
-            "label": "impact_assessment",
-            "description": "Evaluating the effects of humanitarian interventions on affected populations, including both intended and unintended outcomes.",
+            "label": "livelihoods",
+            "description": "This domain focuses on the economic and social activities that individuals and communities engage in to secure a sustainable and dignified life.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "resilience",
+            "description": "This domain assesses the ability of individuals, communities, and systems to anticipate, prepare for, respond to, and recover from shocks and stresses.",
             "level": 1,
             "source": "initial",
             "example_papers": [
@@ -34,8 +40,14 @@
             ]
         },
         {
-            "label": "program_monitoring",
-            "description": "Ongoing tracking and assessment of humanitarian programs to ensure they are meeting their objectives and making necessary adjustments.",
+            "label": "well-being",
+            "description": "This domain measures the overall state of health, happiness, and satisfaction of individuals and communities, encompassing physical, mental, and social dimensions.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "program_effectiveness",
+            "description": "This domain evaluates the extent to which humanitarian programs achieve their intended outcomes and goals, including efficiency, impact, and sustainability.",
             "level": 1,
             "source": "initial",
             "example_papers": [
@@ -49,30 +61,18 @@
             ]
         },
         {
-            "label": "needs_assessment",
-            "description": "Identifying and prioritizing the needs of affected populations to inform the design and implementation of humanitarian responses.",
-            "level": 1,
-            "source": "initial"
-        },
-        {
-            "label": "quality_assurance",
-            "description": "Ensuring that humanitarian aid meets established standards and best practices, including compliance with ethical guidelines and effectiveness criteria.",
-            "level": 1,
-            "source": "initial"
-        },
-        {
-            "label": "stakeholder_engagement",
-            "description": "Evaluating the involvement and feedback of various stakeholders, including beneficiaries, donors, and implementing organizations, in the humanitarian process.",
+            "label": "behavioral_change",
+            "description": "This domain examines changes in individual and community behaviors, attitudes, and practices as a result of humanitarian interventions and programs.",
             "level": 1,
             "source": "initial",
             "example_papers": [
                 [
-                    0,
-                    "Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023"
+                    1,
+                    "Mid-term evaluation of the project \"Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)\""
                 ]
             ],
             "paper_ids": [
-                0
+                1
             ]
         }
     ]

@@ -1,0 +1,52 @@
+{
+    "label": "humanitarian_evaluation",
+    "description": null,
+    "level": 0,
+    "source": "initial",
+    "example_papers": [
+        [
+            0,
+            "Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023"
+        ],
+        [
+            1,
+            "Mid-term evaluation of the project \"Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)\""
+        ]
+    ],
+    "paper_ids": [
+        0,
+        1
+    ],
+    "children": [
+        {
+            "label": "health",
+            "description": "Evaluations of programs and interventions aimed at improving physical and mental health outcomes in crisis-affected populations.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "nutrition",
+            "description": "Assessments of initiatives designed to ensure adequate nutrition and prevent malnutrition in vulnerable communities during and after humanitarian crises.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "shelter",
+            "description": "Reviews of strategies and practices for providing safe, dignified, and sustainable shelter solutions to individuals and families displaced by disasters or conflicts.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "education",
+            "description": "Analyses of educational programs and policies that aim to ensure access to quality education for children and youth in emergency settings.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "water_and_sanitation",
+            "description": "Evaluations of water, sanitation, and hygiene (WASH) programs to ensure safe and sustainable access to clean water and proper sanitation facilities in crisis-affected areas.",
+            "level": 1,
+            "source": "initial"
+        }
+    ]
+}

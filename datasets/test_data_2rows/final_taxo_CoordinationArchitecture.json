@@ -1,0 +1,66 @@
+{
+    "label": "humanitarian_evaluation",
+    "description": null,
+    "level": 0,
+    "source": "initial",
+    "example_papers": [
+        [
+            0,
+            "Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023"
+        ],
+        [
+            1,
+            "Mid-term evaluation of the project \"Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)\""
+        ]
+    ],
+    "paper_ids": [
+        0,
+        1
+    ],
+    "children": [
+        {
+            "label": "clustersystem",
+            "description": "A coordination mechanism where humanitarian organizations are grouped into clusters based on their expertise to ensure a coherent and effective response.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "interagencycoordination",
+            "description": "A framework that facilitates collaboration and communication between different humanitarian agencies to avoid duplication of efforts and ensure a comprehensive response.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "cashworkinggroups",
+            "description": "Specialized coordination bodies that focus on the distribution and management of cash-based assistance to affected populations, ensuring efficient and equitable aid delivery.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "localcoordinationforums",
+            "description": "Platforms at the local level where community leaders, local NGOs, and international organizations come together to plan and coordinate humanitarian activities.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "governmentledcoordination",
+            "description": "A coordination structure where the government takes the lead in organizing and managing the humanitarian response, often involving multiple stakeholders and sectors.",
+            "level": 1,
+            "source": "initial",
+            "example_papers": [
+                [
+                    0,
+                    "Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023"
+                ],
+                [
+                    1,
+                    "Mid-term evaluation of the project \"Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)\""
+                ]
+            ],
+            "paper_ids": [
+                0,
+                1
+            ]
+        }
+    ]
+}

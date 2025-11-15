@@ -211,22 +211,62 @@ In `main.py`, we define the different dimensions of research for a specific topi
 
 ### Using Excel Files as Dataset
 
-Instead of using predefined datasets, you can provide your own Excel file with custom data, for example:
+Instead of using predefined datasets, you can provide your own Excel file with custom data and specify your own taxonomy dimensions:
 
 ```bash
 python main.py \
   --topic "Humanitarian evaluation" \
   --llm api \
-  --dataset_sheet "./datasets/pdf_metadata_results_2023_2025.xlsx" \
+  --dataset_sheet "../humanitarian-evaluation-ai-research/data/pdf_metadata_results_2023_2025.xlsx" \
   --dataset_sheet_tabname "PDF Metadata" \
   --dataset_title_fieldname "Title" \
-  --dataset_abstract_fieldname "Abstractive Summary (map reduced)"
+  --dataset_abstract_fieldname "Abstractive Summary (map reduced)" \
+  --dimensions_file "humanitarian_dimensions.txt"
 ```
 
 **Excel requirements:**
 - File must have headers in the first row
 - Specify the exact column names for title and abstract fields
 - Empty or NaN values will be skipped automatically
+
+**Dimensions File (`--dimensions_file`):**
+- **Required**: Path to a text file defining your taxonomy dimensions
+- Default: `dimensions_definitions.txt` (includes 5 default NLP dimensions and 12 humanitarian evaluation examples)
+- All dimensions listed in this file will be used to create separate taxonomies
+- Format: `dimension_name|||Full definition text` (one per line, comments start with `#`)
+
+**Defining Custom Dimensions:**
+
+The dimensions file (`dimensions_definitions.txt`) defines all available dimensions for your analysis. Each dimension should have a detailed definition explaining what it represents:
+
+**File Format:**
+```
+# This is a comment - lines starting with # are ignored
+# Format: dimension_name|||definition text (use three pipe characters as separator)
+
+Sector|||Sector: the specific humanitarian sector or domain that the research addresses, such as health, nutrition, shelter, education, protection, water and sanitation, or food security.
+Modality|||Modality: the type or form of humanitarian intervention being evaluated, such as cash transfers, in-kind assistance, capacity building, service delivery, advocacy, or protection services.
+```
+
+**Creating Your Own Dimensions File:**
+
+1. Copy `dimensions_definitions.txt` to a new file (e.g., `humanitarian_dimensions.txt`)
+2. Keep only the dimensions you need or add new ones
+3. Each line defines one dimension: `dimension_name|||definition text`
+4. Use detailed definitions that will guide the LLM in building taxonomies
+5. Point to your file with `--dimensions_file humanitarian_dimensions.txt`
+
+**Important Notes:**
+- The separator is three pipe characters: `|||`
+- Definition text can be as long as needed (one line per dimension)
+- All dimensions in the file will be used (no need to specify them separately)
+- Lines starting with `#` are comments and will be ignored
+- The file must contain at least one valid dimension
+- The repository includes a default file with 5 NLP dimensions and 12 humanitarian evaluation dimensions as examples
+
+**Default vs Custom Dimensions:**
+- **Default dimensions** (tasks, datasets, methodologies, evaluation_methods, real_world_domains): Uses paper type classification before taxonomy construction
+- **Custom dimensions**: All papers are classified through each taxonomy (no pre-filtering by paper type)
 
 **Example Excel structure:**
 | Title | Abstractive Summary (map reduced) |

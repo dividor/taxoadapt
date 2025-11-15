@@ -38,6 +38,10 @@ You are provided a list of siblings under a parent node and a paper's title & ab
 
 
 def width_main_prompt(paper, node, ancestors, nl='\n'):
+	# Node dimension must be defined in node_dimension_definitions
+	if node.dimension not in node_dimension_definitions:
+		raise ValueError(f"Dimension '{node.dimension}' not found in dimensions_definitions.txt. Please add it to the file.")
+	
 	out = f"""
 <input>
 <parent_node>
@@ -93,6 +97,10 @@ class DepthExpansionSchema(BaseModel):
 	new_subtopic_description: Annotated[str, StringConstraints(strip_whitespace=True, max_length=250)]
 
 def depth_main_prompt(paper, node, ancestors, nl='\n'):
+	# Node dimension must be defined in node_dimension_definitions
+	if node.dimension not in node_dimension_definitions:
+		raise ValueError(f"Dimension '{node.dimension}' not found in dimensions_definitions.txt. Please add it to the file.")
+	
 	out = f"""
 <input>
 <parent_node>

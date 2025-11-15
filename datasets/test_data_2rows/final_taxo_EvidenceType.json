@@ -1,0 +1,61 @@
+{
+    "label": "humanitarian_evaluation",
+    "description": null,
+    "level": 0,
+    "source": "initial",
+    "example_papers": [
+        [
+            0,
+            "Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023"
+        ],
+        [
+            1,
+            "Mid-term evaluation of the project \"Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)\""
+        ]
+    ],
+    "paper_ids": [
+        0,
+        1
+    ],
+    "children": [
+        {
+            "label": "quantitative_data",
+            "description": "Numerical data collected through surveys, measurements, and statistical analysis to evaluate the impact and effectiveness of humanitarian interventions.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "qualitative_insights",
+            "description": "In-depth, descriptive information gathered through interviews, focus groups, and observations to understand the experiences and perceptions of affected populations.",
+            "level": 1,
+            "source": "initial",
+            "example_papers": [
+                [
+                    1,
+                    "Mid-term evaluation of the project \"Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)\""
+                ]
+            ],
+            "paper_ids": [
+                1
+            ]
+        },
+        {
+            "label": "participatory_data",
+            "description": "Data generated through participatory methods where affected communities are actively involved in the data collection and analysis process, ensuring their voices and perspectives are central to the evaluation.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "administrative_data",
+            "description": "Information derived from existing records and databases maintained by humanitarian organizations, governments, and other institutions to assess program performance and service delivery.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "indigenous_knowledge",
+            "description": "Traditional and local knowledge systems and practices that are integrated into the evaluation process to provide context-specific insights and enhance the cultural relevance of humanitarian interventions.",
+            "level": 1,
+            "source": "initial"
+        }
+    ]
+}

@@ -153,7 +153,24 @@ class Node:
             prompts.append(classify_prompt(self, paper, args))
 
         output = promptLLM(args, prompts, schema=ClassifySchema, max_new_tokens=3000)
-        output_dict = [json.loads(clean_json_string(c)) for c in output]
+        
+        # Parse outputs with error handling
+        output_dict = []
+        for i, c in enumerate(output):
+            try:
+                cleaned = clean_json_string(c)
+                if not cleaned or cleaned.strip() == '':
+                    print(f"WARNING: Empty output for prompt {i}, using empty class_labels")
+                    output_dict.append({'paper_id': i, 'class_options': [], 'class_labels': []})
+                else:
+                    output_dict.append(json.loads(cleaned))
+            except json.JSONDecodeError as e:
+                print(f"WARNING: JSON parse error for prompt {i}: {e}")
+                print(f"Raw output: {c[:200]}")
+                print(f"Cleaned output: {cleaned[:200] if cleaned else 'EMPTY'}")
+                # Return empty classification on error
+                output_dict.append({'paper_id': i, 'class_options': [], 'class_labels': []})
+        
         class_options = [c for c in self.get_children()]
         class_map = {c:0 for c in self.get_children()}
         class_map['unlabeled'] = 0

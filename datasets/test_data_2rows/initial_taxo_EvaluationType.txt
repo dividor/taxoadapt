@@ -1,0 +1,38 @@
+Label: humanitarian_evaluation
+Dimension: EvaluationType
+Description: None
+Level: 0
+Source: Initial
+----------------------------------------
+Children:
+     Label: impact_evaluation
+     Dimension: EvaluationType
+     Description: Assesses the long-term effects of humanitarian interventions on the target population, focusing on outcomes and changes brought about by the intervention.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: process_evaluation
+     Dimension: EvaluationType
+     Description: Examines the implementation and operational aspects of humanitarian programs, ensuring that activities are carried out as planned and identifying areas for improvement.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: formative_evaluation
+     Dimension: EvaluationType
+     Description: Conducted during the early stages of a humanitarian intervention to gather feedback and make necessary adjustments to improve the effectiveness of the program.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: real_time_evaluation
+     Dimension: EvaluationType
+     Description: Involves ongoing assessment during the implementation phase of a humanitarian response to provide timely feedback and support adaptive management.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: cost_effectiveness_analysis
+     Dimension: EvaluationType
+     Description: Evaluates the cost and benefits of humanitarian interventions to determine the most efficient use of resources and maximize the impact of aid.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+----------------------------------------

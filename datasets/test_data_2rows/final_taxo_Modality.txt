@@ -1,5 +1,5 @@
 Label: humanitarian_evaluation
-Dimension: evaluation_methods
+Dimension: Modality
 Description: None
 Level: 0
 Source: Initial
@@ -7,35 +7,35 @@ Source: Initial
 Example Papers: [(0, 'Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023'), (1, 'Mid-term evaluation of the project "Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)"')]
 ----------------------------------------
 Children:
-     Label: impact_assessment
-     Dimension: evaluation_methods
-     Description: Evaluates the overall impact of humanitarian interventions on affected populations, including both intended and unintended outcomes.
+     Label: cash_transfers
+     Dimension: Modality
+     Description: Evaluations focused on the effectiveness and impact of providing monetary assistance directly to beneficiaries.
      Level: 1
      Source: Initial
      ----------------------------------------
-     Label: needs_assessment
-     Dimension: evaluation_methods
-     Description: Assesses the specific needs of communities in crisis situations to ensure that aid efforts are targeted and effective.
+     Label: in_kind_assistance
+     Dimension: Modality
+     Description: Assessments of the provision of goods and services directly to those in need, such as food, clothing, and shelter.
      Level: 1
      Source: Initial
      ----------------------------------------
-     Label: program_effectiveness
-     Dimension: evaluation_methods
-     Description: Analyzes the effectiveness of humanitarian programs by measuring their success in achieving stated goals and objectives.
+     Label: capacity_building
+     Dimension: Modality
+     Description: Evaluations of programs designed to enhance the skills, knowledge, and resources of local organizations and communities.
      Level: 1
      Source: Initial
      # of Papers: 2
      Example Papers: [(0, 'Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023'), (1, 'Mid-term evaluation of the project "Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)"')]
      ----------------------------------------
-     Label: participatory_evaluation
-     Dimension: evaluation_methods
-     Description: Involves beneficiaries and stakeholders in the evaluation process to ensure that their perspectives and experiences are considered.
+     Label: service_delivery
+     Dimension: Modality
+     Description: Analyses of the efficiency and quality of services provided by humanitarian organizations, including healthcare, education, and water supply.
      Level: 1
      Source: Initial
      ----------------------------------------
-     Label: cost_benefit_analysis
-     Dimension: evaluation_methods
-     Description: Compares the costs and benefits of humanitarian interventions to determine their economic efficiency and value for money.
+     Label: protection_services
+     Dimension: Modality
+     Description: Evaluations of interventions aimed at safeguarding the rights and well-being of vulnerable populations, such as refugees and internally displaced persons.
      Level: 1
      Source: Initial
      ----------------------------------------

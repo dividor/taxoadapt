@@ -19,46 +19,50 @@
     ],
     "children": [
         {
-            "label": "impact_assessment",
-            "description": "Evaluates the overall impact of humanitarian interventions on affected populations, including both intended and unintended outcomes.",
+            "label": "impact_evaluation",
+            "description": "Assesses the long-term effects of humanitarian interventions on the target population, focusing on outcomes and changes brought about by the intervention.",
             "level": 1,
             "source": "initial"
         },
         {
-            "label": "needs_assessment",
-            "description": "Assesses the specific needs of communities in crisis situations to ensure that aid efforts are targeted and effective.",
-            "level": 1,
-            "source": "initial"
-        },
-        {
-            "label": "program_effectiveness",
-            "description": "Analyzes the effectiveness of humanitarian programs by measuring their success in achieving stated goals and objectives.",
+            "label": "process_evaluation",
+            "description": "Examines the implementation and delivery of humanitarian programs, identifying strengths and weaknesses in the processes and procedures used.",
             "level": 1,
             "source": "initial",
             "example_papers": [
                 [
                     0,
                     "Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023"
-                ],
+                ]
+            ],
+            "paper_ids": [
+                0
+            ]
+        },
+        {
+            "label": "formative_evaluation",
+            "description": "Conducted during the planning and early stages of a humanitarian intervention to improve the design and implementation of the program.",
+            "level": 1,
+            "source": "initial",
+            "example_papers": [
                 [
                     1,
                     "Mid-term evaluation of the project \"Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)\""
                 ]
             ],
             "paper_ids": [
-                0,
                 1
             ]
         },
         {
-            "label": "participatory_evaluation",
-            "description": "Involves beneficiaries and stakeholders in the evaluation process to ensure that their perspectives and experiences are considered.",
+            "label": "real_time_evaluation",
+            "description": "Provides immediate feedback during the course of a humanitarian response, allowing for timely adjustments and improvements to the intervention.",
             "level": 1,
             "source": "initial"
         },
         {
-            "label": "cost_benefit_analysis",
-            "description": "Compares the costs and benefits of humanitarian interventions to determine their economic efficiency and value for money.",
+            "label": "cost_effectiveness_analysis",
+            "description": "Evaluates the economic efficiency of humanitarian interventions by comparing the costs of different programs to their outcomes, aiming to maximize the benefits per unit of cost.",
             "level": 1,
             "source": "initial"
         }
