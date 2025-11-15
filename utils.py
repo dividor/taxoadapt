@@ -17,6 +17,7 @@ def clean_json_string(json_string):
     Handles formats like:
     - ```json\n{...}\n```
     - ```\n{...}\n```
+    - ---\n{...}\n---
     - {...}\n\n### Explanation: ...
     - Python-style booleans (True/False) -> JSON-style (true/false)
     - Unquoted property names (explanation:) -> quoted ("explanation":)
@@ -33,6 +34,17 @@ def clean_json_string(json_string):
             cleaned_string = match.group(1)
         else:
             cleaned_string = json_string
+    
+    # Remove --- markers (YAML-style separators)
+    pattern = r'---\s*(.*?)\s*---'
+    match = re.search(pattern, cleaned_string, flags=re.DOTALL)
+    if match:
+        cleaned_string = match.group(1)
+    else:
+        # Try single --- at start
+        cleaned_string = re.sub(r'^---\s*', '', cleaned_string)
+        # Try single --- at end
+        cleaned_string = re.sub(r'\s*---$', '', cleaned_string)
     
     # Remove any text after the JSON (like "### Explanation:")
     # Find the last closing brace/bracket and cut off everything after it
