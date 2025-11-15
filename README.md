@@ -20,7 +20,7 @@ TaxoAdapt is a framework that dynamically adapts an LLM-generated taxonomy to a 
 ## Setup
 
 ### Requirements
-- Python 3.8+
+- Python 3.11
 - GPU recommended (for vLLM local models)
 
 ### Virtual Environment
@@ -36,9 +36,18 @@ source venv/bin/activate
 # On Windows:
 # venv\Scripts\activate
 
+# Upgrade pip
+pip install --upgrade pip
+
 # Install dependencies
 pip install -r requirements.txt
 ```
+
+**If installation fails** (especially on macOS with vLLM), try the minimal requirements:
+```bash
+pip install -r requirements_api_only.txt
+```
+This installs only the packages needed for API-based LLM usage (excludes vLLM for local models).
 
 ### LLM Provider Configuration
 
@@ -202,7 +211,7 @@ In `main.py`, we define the different dimensions of research for a specific topi
 
 ### Using Excel Files as Dataset
 
-Instead of using predefined datasets, you can provide your own Excel file with custom data:
+Instead of using predefined datasets, you can provide your own Excel file with custom data, for example:
 
 ```bash
 python main.py \
