@@ -63,3 +63,5 @@ htmlcov/
 .dmypy.json
 dmypy.json
 
+./datasets
+
