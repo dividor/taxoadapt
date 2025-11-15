@@ -10,30 +10,191 @@ TaxoAdapt is a framework that dynamically adapts an LLM-generated taxonomy to a 
 
 ## Contents
   - [Setup](#setup)
+    - [Virtual Environment](#virtual-environment)
+    - [LLM Provider Configuration](#llm-provider-configuration)
     - [Arguments](#arguments)
   - [Custom Dataset](#custom-dataset)
   - [Video](#video)
   - [📖 Citation](#-citation)
 
 ## Setup
-We use `python=3.8`, `torch=2.4.0`, and a two NVIDIA RTX A6000s. Other packages can be installed using:
-```
+
+### Requirements
+- Python 3.8+
+- GPU recommended (for vLLM local models)
+
+### Virtual Environment
+We recommend using a Python virtual environment to manage dependencies:
+
+```bash
+# Create a virtual environment
+python -m venv venv
+
+# Activate the virtual environment
+# On macOS/Linux:
+source venv/bin/activate
+# On Windows:
+# venv\Scripts\activate
+
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-To run the code with the default parameters, you can run the following command in the terminal:
+### LLM Provider Configuration
+
+**All LLM settings are controlled via the `.env` file** - no code changes needed! This repository supports multiple LLM providers: **OpenAI**, **Azure OpenAI**, **Anthropic Claude**, and **Hugging Face**.
+
+#### Quick Setup
+
+1. **Copy the environment template:**
+```bash
+cp .env.example .env
 ```
-python main.py
+
+2. **Edit `.env` and configure your LLM provider:**
+```bash
+# Open .env in your editor
+nano .env  # or vim, code, etc.
 ```
-In order to run the code, you need to have a valid OpenAI API key and set it as an environment variable `OPENAI_API_KEY`. You can do this in your terminal as follows:
-```export OPENAI_API_KEY='your_openai_api_key'```
+
+3. **Set your provider and API key in `.env`:**
+```bash
+# Example: OpenAI
+LLM_PROVIDER=openai
+OPENAI_API_KEY=sk-proj-xxxxx...
+OPENAI_MODEL=gpt-4o-mini
+
+# Example: Claude
+# LLM_PROVIDER=claude
+# ANTHROPIC_API_KEY=sk-ant-xxxxx...
+# CLAUDE_MODEL=claude-3-5-sonnet-20241022
+```
+
+**The `.env` file controls everything** - provider, model, and API credentials!
+
+**Important:** `LLM_PROVIDER` must be set - there is no default. You control exactly which LLM is used.
+
+4. **Test and run:**
+```bash
+python test_provider_setup.py  # Verify .env configuration
+python main.py                  # Run TaxoAdapt
+```
+
+#### Get API Keys
+- **OpenAI**: [platform.openai.com/api-keys](https://platform.openai.com/api-keys)
+- **Azure OpenAI**: [portal.azure.com](https://portal.azure.com)
+- **Anthropic**: [console.anthropic.com](https://console.anthropic.com/)
+- **Hugging Face**: [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens)
+
+#### Provider Details
+
+<details>
+<summary><b>OpenAI Configuration</b></summary>
+
+```bash
+LLM_PROVIDER=openai
+OPENAI_API_KEY=sk-...
+OPENAI_MODEL=gpt-4o-mini  # or gpt-4o, gpt-4
+```
+</details>
+
+<details>
+<summary><b>Azure OpenAI Configuration</b></summary>
+
+```bash
+LLM_PROVIDER=azure
+AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com
+AZURE_OPENAI_API_KEY=your_key
+AZURE_OPENAI_DEPLOYMENT_NAME=gpt-4
+AZURE_OPENAI_API_VERSION=2023-05-15
+```
+</details>
+
+<details>
+<summary><b>Claude (Anthropic) Configuration</b></summary>
+
+```bash
+LLM_PROVIDER=claude
+ANTHROPIC_API_KEY=sk-ant-...
+CLAUDE_MODEL=claude-3-5-sonnet-20241022  # or claude-3-opus, claude-3-haiku
+```
+</details>
+
+<details>
+<summary><b>Hugging Face Configuration</b></summary>
+
+```bash
+LLM_PROVIDER=huggingface
+HUGGINGFACE_API_KEY=hf_...
+HUGGINGFACE_MODEL=meta-llama/Llama-3.3-70B-Instruct  # or Qwen/Qwen2.5-72B-Instruct
+```
+</details>
+
+#### Switching Providers or Models
+
+**Everything is controlled by the `.env` file!** To switch:
+
+1. **Open `.env`:** `nano .env` (or your preferred editor)
+2. **Change provider:** Edit `LLM_PROVIDER`
+3. **Change model:** Edit the model variable (e.g., `OPENAI_MODEL`, `CLAUDE_MODEL`)
+4. **Save and restart:** Re-run your script
+
+**Examples of changes in `.env`:**
+```bash
+# Switch to GPT-4 (just change the model line)
+OPENAI_MODEL=gpt-4
+
+# Switch to Claude (change LLM_PROVIDER and add Claude config)
+LLM_PROVIDER=claude
+ANTHROPIC_API_KEY=sk-ant-xxxxx...
+CLAUDE_MODEL=claude-3-opus-20240229
+
+# Switch to Hugging Face (change LLM_PROVIDER and add HF config)
+LLM_PROVIDER=huggingface
+HUGGINGFACE_API_KEY=hf_xxxxx...
+HUGGINGFACE_MODEL=Qwen/Qwen2.5-72B-Instruct
+```
+
+**No code changes required** - just edit `.env` and restart!
+
+**Note:** `LLM_PROVIDER` must be explicitly set. There is no default - you control exactly which LLM is used.
+
+#### Troubleshooting
+
+- **"LLM_PROVIDER environment variable is not set"**: 
+  - Check that `.env` file exists: `ls -la .env`
+  - If not, create it: `cp .env.example .env`
+  - Edit `.env` and set `LLM_PROVIDER` to your chosen provider (openai, azure, claude, or huggingface)
+  - Add your API key for that provider
+  - Make sure you're in the project root directory when running the code
+  
+- **"API key not found"**: 
+  - Edit `.env` and add your API key for the provider you selected
+  - Example: If `LLM_PROVIDER=openai`, you must set `OPENAI_API_KEY`
+  
+- **Import errors**: 
+  - Run `pip install -r requirements.txt`
+  - Make sure your virtual environment is activated
+  
+- **Rate limits**: 
+  - Use a cheaper model in `.env` (e.g., `OPENAI_MODEL=gpt-4o-mini`, `CLAUDE_MODEL=claude-3-haiku-20240307`)
+  - Check your API plan/credits with your provider
+
+**Security Note:** The `.env` file is ignored by git (see `.gitignore`) to keep your API keys secure. Never commit API keys to version control.
+
+**How it works:** The code automatically loads settings from `.env` at startup (via `python-dotenv`). The `LLM_PROVIDER` variable determines which provider to use - **you must set it explicitly**. There is no default, giving you full control over which LLM is used.
 
 ### Arguments
 The following are the primary arguments for TaxoAdapt (defined in main.py; modify as needed):
 
 - `topic` $\rightarrow$ this is the topic of the corpus, e.g., "natural language processing", "robotics", etc.
 - `dataset` $\rightarrow$ this is the name of the dataset, e.g., "llm_graph", "icra_2020", etc. The huggingface dataset should be added to the `construct_dataset` function in `main.py` (see below).
-- `llm` $\rightarrow$ this is the LLM to be used for initial taxonomy construction, e.g., "gpt", "vllm", etc. You can replace the vLLM model in the `initializeLLM` function and the GPT model version in the `promptGPT` function of `model_definitions.py`.
+- `llm` $\rightarrow$ this is the LLM backend to use: "gpt" (API-based) or "vllm" (local). When using "gpt":
+  - **All configuration comes from `.env` file**
+  - **Must set `LLM_PROVIDER`** (openai, azure, claude, or huggingface) - no default
+  - Set the model variable (e.g., `OPENAI_MODEL=gpt-4o`, `CLAUDE_MODEL=claude-3-5-sonnet-20241022`)
+  - **The code reads from `.env` automatically** - just edit the file and restart
+  - **You control exactly which LLM is used** - the system will fail if `LLM_PROVIDER` is not set
 - `max_depth` $\rightarrow$ this is the maximum depth of each taxonomy to be constructed.
 - `init_levels` $\rightarrow$ this is the number of initial levels to be constructed in the initial taxonomy.
 - `max_density` $\rightarrow$ this is the maximum density of papers to be mapped to a node (or unmapped papers at a parent node) in the taxonomies. If a leaf node has more than `max_density` papers, it will trigger depth expansion at that node. If a parent node has more than `max_density` papers that are unmapped to any of its children, it will trigger width expansion at that node.

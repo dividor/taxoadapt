@@ -4,6 +4,10 @@ from collections import deque
 from contextlib import redirect_stdout
 import argparse
 from tqdm import tqdm
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 from model_definitions import initializeLLM, promptLLM, constructPrompt
 from prompts import multi_dim_prompt, NodeListSchema, type_cls_system_instruction, type_cls_main_prompt, TypeClsSchema

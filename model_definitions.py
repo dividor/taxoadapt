@@ -4,11 +4,12 @@ import numpy as np
 import torch
 import os
 from tqdm import tqdm
-import openai
-from openai import OpenAI
+from dotenv import load_dotenv
 from vllm.sampling_params import GuidedDecodingParams
+from api.llm_provider import get_llm_provider
 
-openai_key = os.getenv('OPENAI_API_KEY')
+# Load environment variables
+load_dotenv()
 
 
 # map each term in text to word_id
@@ -75,22 +76,25 @@ def initializeLLM(args):
 						   max_num_batched_tokens=4096, max_num_seqs=1000, enable_prefix_caching=True)
 
 	if args.llm == 'gpt':
-		args.client[args.llm] = OpenAI(api_key=openai_key)
+		# Use unified LLM provider - reads from LLM_PROVIDER in .env (required)
+		args.client[args.llm] = get_llm_provider()
 	
 	return args
 
 def promptGPT(args, prompts, schema=None, max_new_tokens=1024, json_mode=True, temperature=0.1, top_p=0.99):
 	outputs = []
+	provider = args.client['gpt']
+	
 	for messages in tqdm(prompts):
-		if json_mode:
-			response = args.client['gpt'].chat.completions.create(model='gpt-4o-mini-2024-07-18', stream=False, messages=messages, 
-												response_format={"type": "json_object"}, temperature=temperature, top_p=top_p, 
-												max_tokens=max_new_tokens)
-		else:
-			response = args.client['gpt'].chat.completions.create(model='gpt-4o-mini-2024-07-18', stream=False, messages=messages, 
-											 temperature=temperature, top_p=top_p,
-											 max_tokens=max_new_tokens)
-		outputs.append(response.choices[0].message.content)
+		# Use the unified provider interface
+		response = provider.chat(
+			messages=messages,
+			json_mode=json_mode,
+			max_new_tokens=max_new_tokens,
+			temperature=temperature,
+			top_p=top_p
+		)
+		outputs.append(response)
 	return outputs
 
 def promptLlamaVLLM(args, prompts, schema=None, max_new_tokens=1024, temperature=0.1, top_p=0.99):
