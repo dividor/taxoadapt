@@ -1,5 +1,18 @@
 # Environment variables
 .env
+
+# Test data directories
+datasets/test_data_2rows/
+datasets/test_data_*/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Excel temp files
+~$*.xlsx
+~$*.xls
 .env.local
 
 # Python

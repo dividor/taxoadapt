@@ -221,7 +221,7 @@ python main.py \
   --dataset_sheet_tabname "PDF Metadata" \
   --dataset_title_fieldname "Title" \
   --dataset_abstract_fieldname "Abstractive Summary (map reduced)" \
-  --dimensions_file "humanitarian_dimensions.txt"
+  --dimensions_file "dimensions_definitions.txt"
 ```
 
 **Excel requirements:**
@@ -301,6 +301,44 @@ The system automatically creates an Excel file with two tabs:
 - Column 5: `Abstract` - Abstract of the classified paper
 
 This Excel file provides an easy-to-navigate view of your taxonomy structure and shows which papers were classified into each category.
+
+## Sampling Humanitarian Data
+
+Before running the full taxonomy construction, you may want to create a balanced sample of your data. The `sample_humanitarian_data.py` script helps you create a stratified sample across agencies:
+
+```bash
+python sample_humanitarian_data.py \
+  --dataset_sheet "data/evaluations.xlsx" \
+  --dataset_sheet_tabname "PDF Metadata" \
+  --dataset_title_fieldname "Title" \
+  --dataset_abstract_fieldname "Abstractive Summary (map reduced)" \
+  --agency_fieldname "Agency" \
+  --sample_size 100 \
+  --min_reports 10 \
+  --random_seed 42
+```
+
+**Features:**
+- **Stratified sampling**: Samples proportionally from each agency based on their representation
+- **Minimum threshold**: Only includes agencies with at least `--min_reports` (default: 10)
+- **Reproducible**: Uses `--random_seed` for consistent results
+- **Balanced**: Ensures all eligible agencies are represented in the sample
+- **Automatic output**: Creates `<input>_sampled.xlsx` in the same directory
+
+**Example output:**
+```
+Agencies with >= 10 reports: 10
+Total eligible records: 287
+Final sample size: 50
+
+Sample distribution by agency:
+  WHO: 8/47 (17.0%)
+  IOM: 8/43 (18.6%)
+  UNHCR: 7/43 (16.3%)
+  ...
+```
+
+After sampling, use the sampled file with `main.py` for taxonomy construction.
 
 ## Custom Dataset
 To use a custom dataset, you need to add it to the `construct_dataset` function in `main.py`. You may add it as follows:
