@@ -5,7 +5,9 @@ joblib==1.4.2
 nltk==3.9.1
 numpy==1.24.4
 openai==1.54.5
+openpyxl==3.1.5
 outlines==0.0.46
+pandas==2.0.3
 pydantic==2.11.7
 pypdf==5.8.0
 python-dotenv==1.0.1

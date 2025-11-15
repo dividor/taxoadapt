@@ -76,7 +76,6 @@ OPENAI_MODEL=gpt-4o-mini
 
 4. **Test and run:**
 ```bash
-python test_provider_setup.py  # Verify .env configuration
 python main.py                  # Run TaxoAdapt
 ```
 
@@ -200,6 +199,30 @@ The following are the primary arguments for TaxoAdapt (defined in main.py; modif
 - `max_density` $\rightarrow$ this is the maximum density of papers to be mapped to a node (or unmapped papers at a parent node) in the taxonomies. If a leaf node has more than `max_density` papers, it will trigger depth expansion at that node. If a parent node has more than `max_density` papers that are unmapped to any of its children, it will trigger width expansion at that node.
 
 In `main.py`, we define the different dimensions of research for a specific topic, each of which will be constructed as a separate taxonomy. You can modify the dimensions in the `args.dimensions` list.
+
+### Using Excel Files as Dataset
+
+Instead of using predefined datasets, you can provide your own Excel file with custom data:
+
+```bash
+python main.py \
+  --topic "Humanitarian evaluation" \
+  --dataset_sheet "../humanitarian-evaluation-ai-research/data/pdf_metadata_results_2023_2025.xlsx" \
+  --dataset_sheet_tabname "PDF Metadata" \
+  --dataset_title_fieldname "Title" \
+  --dataset_abstract_fieldname "Abstractive Summary (map reduced)"
+```
+
+**Excel requirements:**
+- File must have headers in the first row
+- Specify the exact column names for title and abstract fields
+- Empty or NaN values will be skipped automatically
+
+**Example Excel structure:**
+| Title | Abstractive Summary (map reduced) |
+|-------|-----------------------------------|
+| Paper 1 Title | This evaluation examines... |
+| Paper 2 Title | We assess the impact of... |
 
 ## Custom Dataset
 To use a custom dataset, you need to add it to the `construct_dataset` function in `main.py`. You may add it as follows:

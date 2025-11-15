@@ -5,6 +5,7 @@ from contextlib import redirect_stdout
 import argparse
 from tqdm import tqdm
 from dotenv import load_dotenv
+import pandas as pd
 
 # Load environment variables from .env file
 load_dotenv()
@@ -16,6 +17,50 @@ from datasets import load_dataset
 from expansion import expandNodeWidth, expandNodeDepth
 from paper import Paper
 from utils import clean_json_string
+
+def construct_dataset_from_excel(args):
+    """Construct dataset from Excel file with custom tab and field names"""
+    if not os.path.exists(args.data_dir):
+        os.makedirs(args.data_dir)
+    
+    print(f"Reading Excel file: {args.dataset_sheet}")
+    print(f"Tab: {args.dataset_sheet_tabname}")
+    print(f"Title field: {args.dataset_title_fieldname}")
+    print(f"Abstract field: {args.dataset_abstract_fieldname}")
+    
+    # Read Excel file
+    df = pd.read_excel(args.dataset_sheet, sheet_name=args.dataset_sheet_tabname)
+    
+    internal_collection = {}
+    
+    with open(os.path.join(args.data_dir, 'internal.txt'), 'w') as f:
+        internal_count = 0
+        for idx, row in tqdm(df.iterrows(), total=len(df), desc="Processing papers"):
+            # Get title and abstract from specified field names
+            title = str(row[args.dataset_title_fieldname]) if args.dataset_title_fieldname in row else ""
+            abstract = str(row[args.dataset_abstract_fieldname]) if args.dataset_abstract_fieldname in row else ""
+            
+            # Skip if both are empty or NaN
+            if (not title or title == 'nan') and (not abstract or abstract == 'nan'):
+                continue
+            
+            temp_dict = {"Title": title, "Abstract": abstract}
+            formatted_dict = json.dumps(temp_dict)
+            f.write(f'{formatted_dict}\n')
+            
+            internal_collection[internal_count] = Paper(
+                internal_count, 
+                title, 
+                abstract, 
+                label_opts=args.dimensions, 
+                internal=True
+            )
+            internal_count += 1
+        
+        print(f"Total # of Papers: {internal_count}")
+    
+    return internal_collection, internal_count
+
 
 def construct_dataset(args):
     if not os.path.exists(args.data_dir):
@@ -125,7 +170,19 @@ def main(args):
 
     print("######## STEP 1: LOAD IN DATASET ########")
 
-    internal_collection, internal_count = construct_dataset(args)
+    # Check if using Excel sheet or predefined dataset
+    if args.dataset_sheet:
+        # Validate that all Excel-related arguments are provided
+        if not all([args.dataset_sheet_tabname, args.dataset_title_fieldname, args.dataset_abstract_fieldname]):
+            raise ValueError(
+                "When using --dataset_sheet, you must also provide:\n"
+                "  --dataset_sheet_tabname\n"
+                "  --dataset_title_fieldname\n"
+                "  --dataset_abstract_fieldname"
+            )
+        internal_collection, internal_count = construct_dataset_from_excel(args)
+    else:
+        internal_collection, internal_count = construct_dataset(args)
     
     print(f'Internal: {internal_count}')
 
@@ -217,17 +274,41 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--topic', type=str, default='natural language processing')
-    parser.add_argument('--dataset', type=str, default='llm_graph')
-    parser.add_argument('--llm', type=str, default='gpt')
-    parser.add_argument('--max_depth', type=int, default=2)
-    parser.add_argument('--init_levels', type=int, default=1)
-    parser.add_argument('--max_density', type=int, default=40)
+    parser.add_argument('--topic', type=str, default='natural language processing',
+                       help='Topic of the corpus (e.g., "natural language processing", "robotics")')
+    parser.add_argument('--dataset', type=str, default='llm_graph',
+                       help='Predefined dataset name (e.g., "emnlp_2024", "cvpr_2024")')
+    parser.add_argument('--llm', type=str, default='gpt',
+                       help='LLM backend: "gpt" (API-based) or "vllm" (local)')
+    parser.add_argument('--max_depth', type=int, default=2,
+                       help='Maximum depth of each taxonomy')
+    parser.add_argument('--init_levels', type=int, default=1,
+                       help='Number of initial levels in the taxonomy')
+    parser.add_argument('--max_density', type=int, default=40,
+                       help='Maximum density of papers per node')
+    
+    # Excel sheet arguments (alternative to --dataset)
+    parser.add_argument('--dataset_sheet', type=str, default=None,
+                       help='Path to Excel file (alternative to --dataset)')
+    parser.add_argument('--dataset_sheet_tabname', type=str, default=None,
+                       help='Excel sheet/tab name to read from')
+    parser.add_argument('--dataset_title_fieldname', type=str, default=None,
+                       help='Column name for paper titles')
+    parser.add_argument('--dataset_abstract_fieldname', type=str, default=None,
+                       help='Column name for paper abstracts')
+    
     args = parser.parse_args()
 
     args.dimensions = ["tasks", "datasets", "methodologies", "evaluation_methods", "real_world_domains"]
 
-    args.data_dir = f"datasets/{args.dataset.lower().replace(' ', '_')}"
-    args.internal = f"{args.dataset}.txt"
+    # Set data directory based on dataset source
+    if args.dataset_sheet:
+        # Use Excel filename (without extension) as data directory name
+        excel_basename = os.path.splitext(os.path.basename(args.dataset_sheet))[0]
+        args.data_dir = f"datasets/{excel_basename.lower().replace(' ', '_')}"
+        args.internal = f"{excel_basename}.txt"
+    else:
+        args.data_dir = f"datasets/{args.dataset.lower().replace(' ', '_')}"
+        args.internal = f"{args.dataset}.txt"
 
     main(args)
