@@ -7,13 +7,6 @@
 # 1. Initial taxonomy construction (understanding what the dimension is about)
 # 2. Taxonomy expansion (identifying types/subtypes within the dimension)
 
-# ===== DEFAULT NLP DIMENSIONS =====
-tasks|||Task: we assume that all papers are associated with a specific task(s). Always output "Task" as one of the paper types unless you are absolutely sure the paper does not address any task.
-methodologies|||Methodology: a paper that introduces, explains, or refines a method or approach, providing theoretical foundations, implementation details, and empirical evaluations to advance the state-of-the-art or solve specific problems.
-datasets|||Datasets: introduces a new dataset, detailing its creation, structure, and intended use, while providing analysis or benchmarks to demonstrate its relevance and utility. It focuses on advancing research by addressing gaps in existing datasets/performance of SOTA models or enabling new applications in the field.
-evaluation_methods|||Evaluation Methods: a paper that assesses the performance, limitations, or biases of models, methods, or datasets using systematic experiments or analyses. It focuses on benchmarking, comparative studies, or proposing new evaluation metrics or frameworks to provide insights and improve understanding in the field.
-real_world_domains|||Real-World Domains: demonstrates the use of techniques to solve specific, real-world problems or address specific domain challenges. It focuses on practical implementation, impact, and insights gained from applying methods in various contexts. Examples include: product recommendation systems, medical record summarization, etc.
-
 # ===== HUMANITARIAN EVALUATION DIMENSIONS (EXAMPLES) =====
 Sector|||Sector: the specific humanitarian sector or domain that the research addresses, such as health, nutrition, shelter, education, protection, water and sanitation, or food security. Papers are classified based on the primary sector they contribute to or evaluate.
 Modality|||Modality: the type or form of humanitarian intervention being evaluated, such as cash transfers, in-kind assistance, capacity building, service delivery, advocacy, or protection services. This dimension captures how aid is delivered and what mechanisms are used.

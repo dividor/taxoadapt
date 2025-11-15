@@ -308,7 +308,7 @@ Before running the full taxonomy construction, you may want to create a balanced
 
 ```bash
 python sample_humanitarian_data.py \
-  --dataset_sheet "data/evaluations.xlsx" \
+  --dataset_sheet "./datasets/pdf_metadata_results_2023_2025.xlsx" \
   --dataset_sheet_tabname "PDF Metadata" \
   --dataset_title_fieldname "Title" \
   --dataset_abstract_fieldname "Abstractive Summary (map reduced)" \
