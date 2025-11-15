@@ -19,19 +19,19 @@ Children:
      ----------------------------------------
      Label: program_effectiveness
      Dimension: evaluation_methods
-     Description: Analyzes the effectiveness of humanitarian programs by comparing outcomes against predefined goals and benchmarks.
+     Description: Analyzes the effectiveness of humanitarian programs by measuring their success in achieving stated goals and objectives.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: participatory_evaluation
      Dimension: evaluation_methods
-     Description: Involves beneficiaries and stakeholders in the evaluation process to gather diverse perspectives and enhance the validity of findings.
+     Description: Involves beneficiaries and stakeholders in the evaluation process to ensure that their perspectives and experiences are considered.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: cost_benefit_analysis
      Dimension: evaluation_methods
-     Description: Evaluates the economic efficiency of humanitarian interventions by comparing the costs incurred with the benefits achieved.
+     Description: Compares the costs and benefits of humanitarian interventions to determine their economic efficiency and value for money.
      Level: 1
      Source: Initial
      ----------------------------------------

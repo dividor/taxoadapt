@@ -13,13 +13,13 @@ Children:
      ----------------------------------------
      Label: needs_assessment
      Dimension: tasks
-     Description: Identifying the immediate and long-term needs of communities affected by crises to inform the design and implementation of appropriate humanitarian responses.
+     Description: Identifying the specific needs of communities affected by crises to inform the design and implementation of appropriate humanitarian responses.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: program_evaluation
      Dimension: tasks
-     Description: Assessing the performance and outcomes of specific humanitarian programs to ensure they meet their intended goals and objectives.
+     Description: Assessing the performance and outcomes of humanitarian programs to ensure they meet their intended goals and objectives.
      Level: 1
      Source: Initial
      ----------------------------------------

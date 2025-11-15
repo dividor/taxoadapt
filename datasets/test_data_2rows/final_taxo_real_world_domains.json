@@ -1,0 +1,61 @@
+{
+    "label": "humanitarian_evaluation",
+    "description": null,
+    "level": 0,
+    "source": "initial",
+    "example_papers": [
+        [
+            0,
+            "Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023"
+        ],
+        [
+            1,
+            "Mid-term evaluation of the project \"Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)\""
+        ]
+    ],
+    "paper_ids": [
+        0,
+        1
+    ],
+    "children": [
+        {
+            "label": "disaster_response",
+            "description": "Focuses on the application of methods to improve the efficiency and effectiveness of disaster response efforts, including emergency relief, resource allocation, and communication strategies.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "health_crisis_management",
+            "description": "Involves the use of techniques to manage and mitigate the impact of health crises, such as pandemics, by enhancing surveillance, treatment, and public health interventions.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "refugee_support",
+            "description": "Addresses the challenges faced by refugees and displaced persons, including access to basic needs, education, and integration into host communities.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "food_security",
+            "description": "Explores the application of methods to ensure sustainable food supply and access, particularly in regions affected by conflict, climate change, or economic instability.",
+            "level": 1,
+            "source": "initial",
+            "example_papers": [
+                [
+                    1,
+                    "Mid-term evaluation of the project \"Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)\""
+                ]
+            ],
+            "paper_ids": [
+                1
+            ]
+        },
+        {
+            "label": "human_rights_monitoring",
+            "description": "Involves the use of techniques to monitor and report on human rights violations, advocate for justice, and support the protection of vulnerable populations.",
+            "level": 1,
+            "source": "initial"
+        }
+    ]
+}

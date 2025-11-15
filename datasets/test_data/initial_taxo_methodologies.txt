@@ -13,7 +13,7 @@ Children:
      ----------------------------------------
      Label: quantitative_methods
      Dimension: methodologies
-     Description: Methodologies that involve the collection and analysis of numerical data to measure the impact, effectiveness, and efficiency of humanitarian interventions using statistical techniques and surveys.
+     Description: Methodologies that involve the collection and analysis of numerical data to measure the impact, effectiveness, and efficiency of humanitarian interventions using surveys, statistical models, and econometric techniques.
      Level: 1
      Source: Initial
      ----------------------------------------
@@ -25,13 +25,13 @@ Children:
      ----------------------------------------
      Label: participatory_methods
      Dimension: methodologies
-     Description: Methodologies that involve active participation and collaboration with affected communities in the evaluation process, ensuring that their voices, needs, and perspectives are central to the assessment and decision-making.
+     Description: Methodologies that engage affected communities and stakeholders in the evaluation process, ensuring that their voices and perspectives are central to the assessment of humanitarian programs and policies.
      Level: 1
      Source: Initial
      ----------------------------------------
-     Label: systems_thinking_methods
+     Label: systematic_reviews
      Dimension: methodologies
-     Description: Methodologies that apply systems thinking principles to evaluate the complex and interconnected nature of humanitarian crises, focusing on the interactions and feedback loops within and between different systems and stakeholders.
+     Description: Methodologies that systematically identify, select, and synthesize existing research to provide a comprehensive and evidence-based evaluation of humanitarian interventions, often used to inform policy and practice.
      Level: 1
      Source: Initial
      ----------------------------------------

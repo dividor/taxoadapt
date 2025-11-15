@@ -29,9 +29,9 @@ Children:
      Level: 1
      Source: Initial
      ----------------------------------------
-     Label: human_rights_monitoring
+     Label: community_development
      Dimension: real_world_domains
-     Description: Involves the systematic evaluation of human rights violations and the effectiveness of measures taken to protect and promote human rights in conflict and post-conflict settings.
+     Description: Assesses projects and programs that aim to improve the social, economic, and environmental conditions of communities, particularly in underdeveloped or conflict-affected areas.
      Level: 1
      Source: Initial
      ----------------------------------------

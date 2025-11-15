@@ -204,7 +204,7 @@ def main(args):
 
     prompts = [constructPrompt(args, type_cls_system_instruction, type_cls_main_prompt(paper)) for paper in internal_collection.values()]
     outputs = promptLLM(args=args, prompts=prompts, schema=TypeClsSchema, max_new_tokens=500, json_mode=True, temperature=0.1, top_p=0.99)
-    outputs = [json.loads(clean_json_string(c)) if "```" in c else json.loads(c.strip()) for c in outputs]
+    outputs = [json.loads(clean_json_string(c)) for c in outputs]
 
     for r in roots:
         roots[r].papers = {}

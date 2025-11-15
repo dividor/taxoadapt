@@ -1,0 +1,38 @@
+Label: humanitarian_evaluation
+Dimension: datasets
+Description: None
+Level: 0
+Source: Initial
+----------------------------------------
+Children:
+     Label: disaster_response_datasets
+     Dimension: datasets
+     Description: Datasets specifically designed to support disaster response efforts, including real-time data on affected areas, population movements, and resource needs.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: humanitarian_aid_effectiveness_datasets
+     Dimension: datasets
+     Description: Datasets that evaluate the effectiveness of humanitarian aid programs, providing insights into the impact, efficiency, and areas for improvement.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: conflict_zone_monitoring_datasets
+     Dimension: datasets
+     Description: Datasets focused on monitoring and analyzing conflict zones, including data on violence, displacement, and humanitarian access.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: health_crisis_evaluation_datasets
+     Dimension: datasets
+     Description: Datasets that assess the impact of health crises, such as pandemics or epidemics, on affected populations and the effectiveness of health interventions.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: refugee_integration_datasets
+     Dimension: datasets
+     Description: Datasets that evaluate the integration of refugees into host communities, covering aspects such as employment, education, and social inclusion.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+----------------------------------------

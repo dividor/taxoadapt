@@ -1,0 +1,38 @@
+Label: humanitarian_evaluation
+Dimension: real_world_domains
+Description: None
+Level: 0
+Source: Initial
+----------------------------------------
+Children:
+     Label: disaster_response
+     Dimension: real_world_domains
+     Description: Focuses on the application of methods to improve the efficiency and effectiveness of disaster response efforts, including emergency relief, resource allocation, and communication strategies.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: health_crisis_management
+     Dimension: real_world_domains
+     Description: Involves the use of techniques to manage and mitigate the impact of health crises, such as pandemics, by enhancing surveillance, treatment, and public health interventions.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: refugee_support
+     Dimension: real_world_domains
+     Description: Addresses the challenges faced by refugees and displaced persons, including access to basic needs, education, and integration into host communities.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: food_security
+     Dimension: real_world_domains
+     Description: Explores the application of methods to ensure sustainable food supply and access, particularly in regions affected by conflict, climate change, or economic instability.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: human_rights_monitoring
+     Dimension: real_world_domains
+     Description: Involves the use of techniques to monitor and report on human rights violations, advocate for justice, and support the protection of vulnerable populations.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+----------------------------------------

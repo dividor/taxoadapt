@@ -1,0 +1,38 @@
+Label: humanitarian_evaluation
+Dimension: tasks
+Description: None
+Level: 0
+Source: Initial
+----------------------------------------
+Children:
+     Label: impact_assessment
+     Dimension: tasks
+     Description: Evaluating the effects of humanitarian interventions on affected populations, including both intended and unintended outcomes.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: program_monitoring
+     Dimension: tasks
+     Description: Ongoing tracking and assessment of humanitarian programs to ensure they are meeting their objectives and making necessary adjustments.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: needs_assessment
+     Dimension: tasks
+     Description: Identifying and prioritizing the needs of affected populations to inform the design and implementation of humanitarian responses.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: quality_assurance
+     Dimension: tasks
+     Description: Ensuring that humanitarian aid meets established standards and best practices, including compliance with ethical guidelines and effectiveness criteria.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: stakeholder_engagement
+     Dimension: tasks
+     Description: Evaluating the involvement and feedback of various stakeholders, including beneficiaries, donors, and implementing organizations, in the humanitarian process.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+----------------------------------------

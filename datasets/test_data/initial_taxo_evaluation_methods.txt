@@ -11,27 +11,27 @@ Children:
      Level: 1
      Source: Initial
      ----------------------------------------
-     Label: needs_assessment
+     Label: process_evaluation
      Dimension: evaluation_methods
-     Description: Assesses the specific needs of communities in crisis situations to ensure that aid efforts are targeted and effective.
+     Description: Focuses on the implementation and operational aspects of humanitarian programs, assessing the efficiency and effectiveness of processes and procedures.
      Level: 1
      Source: Initial
      ----------------------------------------
-     Label: program_effectiveness
+     Label: cost_effectiveness_analysis
      Dimension: evaluation_methods
-     Description: Analyzes the effectiveness of humanitarian programs by comparing outcomes against predefined goals and benchmarks.
+     Description: Analyzes the cost-effectiveness of humanitarian interventions, comparing the costs of different programs to their outcomes to identify the most efficient use of resources.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: participatory_evaluation
      Dimension: evaluation_methods
-     Description: Involves beneficiaries and stakeholders in the evaluation process to gather diverse perspectives and enhance the validity of findings.
+     Description: Involves the active participation of affected communities in the evaluation process, ensuring that their perspectives and needs are central to the assessment.
      Level: 1
      Source: Initial
      ----------------------------------------
-     Label: cost_benefit_analysis
+     Label: outcome_mapping
      Dimension: evaluation_methods
-     Description: Evaluates the economic efficiency of humanitarian interventions by comparing the costs incurred with the benefits achieved.
+     Description: Maps the outcomes of humanitarian interventions, tracing the changes in behavior, relationships, and conditions of affected populations over time.
      Level: 1
      Source: Initial
      ----------------------------------------

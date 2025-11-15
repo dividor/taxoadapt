@@ -150,10 +150,10 @@ class Node:
         # Which papers are classified to the current node?
         prompts = []
         for paper_id, paper in self.papers.items():
-            prompts.append(classify_prompt(self, paper))
+            prompts.append(classify_prompt(self, paper, args))
 
         output = promptLLM(args, prompts, schema=ClassifySchema, max_new_tokens=3000)
-        output_dict = [json.loads(clean_json_string(c)) if "```" in c else json.loads(c.strip()) for c in output]
+        output_dict = [json.loads(clean_json_string(c)) for c in output]
         class_options = [c for c in self.get_children()]
         class_map = {c:0 for c in self.get_children()}
         class_map['unlabeled'] = 0
@@ -267,7 +267,7 @@ class DAG:
                 nodes_to_visit.append((child, new_ancestors))
 
         output = promptLLM(args, list(prompts.values()), schema=EnrichSchema, max_new_tokens=1500)
-        output_dict = [json.loads(clean_json_string(c)) if "```" in c else json.loads(c.strip()) for c in output]
+        output_dict = [json.loads(clean_json_string(c)) for c in output]
 
         for node_id, out in zip(prompts.keys(), output_dict):
             node = id2node[node_id]
@@ -303,10 +303,10 @@ class DAG:
             # Which papers are classified to the current node?
             prompts = []
             for paper_id, paper in papers.items():
-                prompts.append(classify_prompt(current_node, paper))
+                prompts.append(classify_prompt(current_node, paper, args))
 
             output = promptLLM(args, prompts, schema=ClassifySchema, max_new_tokens=1500)
-            output_dict = [json.loads(clean_json_string(c)) if "```" in c else json.loads(c.strip()) for c in output]
+            output_dict = [json.loads(clean_json_string(c)) for c in output]
             class_options = [c for c in current_node.get_children()]
 
             for (paper_id, paper), out_labels in zip(papers.items(), output_dict):

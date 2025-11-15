@@ -11,10 +11,51 @@ from sklearn.preprocessing import MultiLabelBinarizer
 
 
 def clean_json_string(json_string):
-    pattern = r'^```json\s*(.*?)\s*```$'
-    cleaned_string = re.sub(pattern, r'\1', json_string, flags=re.DOTALL)
-    pattern = r'^```\s*(.*?)\s*```$'
-    cleaned_string = re.sub(pattern, r'\1', cleaned_string, flags=re.DOTALL)
+    """
+    Clean JSON from LLM output by removing markdown code blocks and extra text
+    
+    Handles formats like:
+    - ```json\n{...}\n```
+    - ```\n{...}\n```
+    - {...}\n\n### Explanation: ...
+    - Python-style booleans (True/False) -> JSON-style (true/false)
+    - Unquoted property names (explanation:) -> quoted ("explanation":)
+    """
+    # Remove markdown code blocks
+    pattern = r'```json\s*(.*?)\s*```'
+    match = re.search(pattern, json_string, flags=re.DOTALL)
+    if match:
+        cleaned_string = match.group(1)
+    else:
+        pattern = r'```\s*(.*?)\s*```'
+        match = re.search(pattern, json_string, flags=re.DOTALL)
+        if match:
+            cleaned_string = match.group(1)
+        else:
+            cleaned_string = json_string
+    
+    # Remove any text after the JSON (like "### Explanation:")
+    # Find the last closing brace/bracket and cut off everything after it
+    cleaned_string = cleaned_string.strip()
+    
+    # Find the last } or ] (end of JSON object/array)
+    last_brace = cleaned_string.rfind('}')
+    last_bracket = cleaned_string.rfind(']')
+    last_json_char = max(last_brace, last_bracket)
+    
+    if last_json_char != -1:
+        cleaned_string = cleaned_string[:last_json_char + 1]
+    
+    # Replace Python-style booleans with JSON-style
+    cleaned_string = cleaned_string.replace('True', 'true')
+    cleaned_string = cleaned_string.replace('False', 'false')
+    cleaned_string = cleaned_string.replace('None', 'null')
+    
+    # Fix unquoted property names (JavaScript-style to JSON-style)
+    # Match pattern: word followed by colon (not inside quotes)
+    # This handles: explanation: "..." -> "explanation": "..."
+    cleaned_string = re.sub(r'(\n\s*)([a-zA-Z_][a-zA-Z0-9_]*)\s*:', r'\1"\2":', cleaned_string)
+    
     return cleaned_string.strip()
 
 

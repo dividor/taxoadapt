@@ -31,5 +31,17 @@ Your output format should be in the following JSON format:
 ---
 '''
 
-def classify_prompt(node, paper):
-    return init_classify_prompt + '\n\n' + main_classify_prompt(node, paper)
+def classify_prompt(node, paper, args=None):
+    """
+    Generate classification prompt
+    
+    If args is provided and args.llm == 'api', returns OpenAI-style message format.
+    Otherwise, returns a plain string (for vLLM).
+    """
+    if args and args.llm == 'api':
+        # Return OpenAI-style messages
+        from model_definitions import constructPrompt
+        return constructPrompt(args, init_classify_prompt, main_classify_prompt(node, paper))
+    else:
+        # Return plain string for vLLM
+        return init_classify_prompt + '\n\n' + main_classify_prompt(node, paper)

@@ -1,0 +1,66 @@
+{
+    "label": "humanitarian_evaluation",
+    "description": null,
+    "level": 0,
+    "source": "initial",
+    "example_papers": [
+        [
+            0,
+            "Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023"
+        ],
+        [
+            1,
+            "Mid-term evaluation of the project \"Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)\""
+        ]
+    ],
+    "paper_ids": [
+        0,
+        1
+    ],
+    "children": [
+        {
+            "label": "impact_assessment",
+            "description": "Evaluates the overall impact of humanitarian interventions on affected populations, including both intended and unintended outcomes.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "needs_assessment",
+            "description": "Assesses the specific needs of communities in crisis situations to ensure that aid efforts are targeted and effective.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "program_effectiveness",
+            "description": "Analyzes the effectiveness of humanitarian programs by measuring their success in achieving stated goals and objectives.",
+            "level": 1,
+            "source": "initial",
+            "example_papers": [
+                [
+                    0,
+                    "Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023"
+                ],
+                [
+                    1,
+                    "Mid-term evaluation of the project \"Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)\""
+                ]
+            ],
+            "paper_ids": [
+                0,
+                1
+            ]
+        },
+        {
+            "label": "participatory_evaluation",
+            "description": "Involves beneficiaries and stakeholders in the evaluation process to ensure that their perspectives and experiences are considered.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "cost_benefit_analysis",
+            "description": "Compares the costs and benefits of humanitarian interventions to determine their economic efficiency and value for money.",
+            "level": 1,
+            "source": "initial"
+        }
+    ]
+}

@@ -3,6 +3,8 @@ Dimension: evaluation_methods
 Description: None
 Level: 0
 Source: Initial
+# of Papers: 2
+Example Papers: [(0, 'Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023'), (1, 'Mid-term evaluation of the project "Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)"')]
 ----------------------------------------
 Children:
      Label: impact_assessment
@@ -19,19 +21,21 @@ Children:
      ----------------------------------------
      Label: program_effectiveness
      Dimension: evaluation_methods
-     Description: Analyzes the effectiveness of humanitarian programs by comparing outcomes against predefined goals and benchmarks.
+     Description: Analyzes the effectiveness of humanitarian programs by measuring their success in achieving stated goals and objectives.
      Level: 1
      Source: Initial
+     # of Papers: 2
+     Example Papers: [(0, 'Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023'), (1, 'Mid-term evaluation of the project "Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)"')]
      ----------------------------------------
      Label: participatory_evaluation
      Dimension: evaluation_methods
-     Description: Involves beneficiaries and stakeholders in the evaluation process to gather diverse perspectives and enhance the validity of findings.
+     Description: Involves beneficiaries and stakeholders in the evaluation process to ensure that their perspectives and experiences are considered.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: cost_benefit_analysis
      Dimension: evaluation_methods
-     Description: Evaluates the economic efficiency of humanitarian interventions by comparing the costs incurred with the benefits achieved.
+     Description: Compares the costs and benefits of humanitarian interventions to determine their economic efficiency and value for money.
      Level: 1
      Source: Initial
      ----------------------------------------

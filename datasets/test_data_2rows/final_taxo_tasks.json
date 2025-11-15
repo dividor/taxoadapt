@@ -1,0 +1,79 @@
+{
+    "label": "humanitarian_evaluation",
+    "description": null,
+    "level": 0,
+    "source": "initial",
+    "example_papers": [
+        [
+            0,
+            "Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023"
+        ],
+        [
+            1,
+            "Mid-term evaluation of the project \"Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)\""
+        ]
+    ],
+    "paper_ids": [
+        0,
+        1
+    ],
+    "children": [
+        {
+            "label": "impact_assessment",
+            "description": "Evaluating the effects of humanitarian interventions on affected populations, including both intended and unintended outcomes.",
+            "level": 1,
+            "source": "initial",
+            "example_papers": [
+                [
+                    1,
+                    "Mid-term evaluation of the project \"Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)\""
+                ]
+            ],
+            "paper_ids": [
+                1
+            ]
+        },
+        {
+            "label": "program_monitoring",
+            "description": "Ongoing tracking and assessment of humanitarian programs to ensure they are meeting their objectives and making necessary adjustments.",
+            "level": 1,
+            "source": "initial",
+            "example_papers": [
+                [
+                    0,
+                    "Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023"
+                ]
+            ],
+            "paper_ids": [
+                0
+            ]
+        },
+        {
+            "label": "needs_assessment",
+            "description": "Identifying and prioritizing the needs of affected populations to inform the design and implementation of humanitarian responses.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "quality_assurance",
+            "description": "Ensuring that humanitarian aid meets established standards and best practices, including compliance with ethical guidelines and effectiveness criteria.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "stakeholder_engagement",
+            "description": "Evaluating the involvement and feedback of various stakeholders, including beneficiaries, donors, and implementing organizations, in the humanitarian process.",
+            "level": 1,
+            "source": "initial",
+            "example_papers": [
+                [
+                    0,
+                    "Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023"
+                ]
+            ],
+            "paper_ids": [
+                0
+            ]
+        }
+    ]
+}
