@@ -172,37 +172,44 @@ class AnthropicProvider(LLMProvider):
 
 
 class HuggingFaceProvider(LLMProvider):
-    """Hugging Face LLM Provider (via Inference API)"""
+    """Hugging Face LLM Provider (via OpenAI-compatible Router API)"""
     
     def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None):
-        from huggingface_hub import InferenceClient
+        from openai import OpenAI
         
-        self.api_key = api_key or os.getenv('HUGGINGFACE_API_KEY')
-        self.model = model or os.getenv('HUGGINGFACE_MODEL', 'meta-llama/Llama-3.3-70B-Instruct')
+        # HuggingFace can use either HF_TOKEN or HUGGINGFACE_API_KEY
+        self.api_key = api_key or os.getenv('HF_TOKEN') or os.getenv('HUGGINGFACE_API_KEY')
+        self.model = model or os.getenv('HUGGINGFACE_MODEL', 'Qwen/Qwen2.5-72B-Instruct')
         
         if not self.api_key:
-            raise ValueError("Hugging Face API key not found. Set HUGGINGFACE_API_KEY environment variable.")
+            raise ValueError("Hugging Face API key not found. Set HUGGINGFACE_API_KEY or HF_TOKEN environment variable.")
         
-        # Use the new Hugging Face Inference API endpoint
-        self.client = InferenceClient(
-            token=self.api_key,
-            base_url="https://api-inference.huggingface.co/models"
+        # Use OpenAI client with HuggingFace Router (OpenAI-compatible endpoint)
+        self.client = OpenAI(
+            api_key=self.api_key,
+            base_url="https://router.huggingface.co/v1"
         )
     
     def chat(self, messages: List[Dict[str, str]], **kwargs) -> str:
-        """Send a chat completion request to Hugging Face"""
+        """Send a chat completion request to Hugging Face Router"""
+        response_format = kwargs.pop('response_format', None)
+        json_mode = kwargs.pop('json_mode', False)
         max_tokens = kwargs.pop('max_new_tokens', kwargs.pop('max_tokens', 1024))
         temperature = kwargs.pop('temperature', 0.1)
         top_p = kwargs.pop('top_p', 0.99)
         
-        response = self.client.chat_completion(
-            messages=messages,
-            model=self.model,
-            max_tokens=max_tokens,
-            temperature=temperature,
-            top_p=top_p
-        )
+        request_kwargs = {
+            'model': self.model,
+            'messages': messages,
+            'temperature': temperature,
+            'top_p': top_p,
+            'max_tokens': max_tokens
+        }
         
+        if json_mode or response_format:
+            request_kwargs['response_format'] = response_format or {"type": "json_object"}
+        
+        response = self.client.chat.completions.create(**request_kwargs)
         return response.choices[0].message.content
     
     def get_model_name(self) -> str:
