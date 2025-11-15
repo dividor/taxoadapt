@@ -286,6 +286,63 @@ def main(args):
 
         with open(f'{args.data_dir}/final_taxo_{dim}.json', 'w', encoding='utf-8') as f:
             json.dump(taxo_dict, f, ensure_ascii=False, indent=4)
+    
+    # Create Excel output with Taxonomy and Examples tabs
+    print("######## STEP 6: CREATE EXCEL OUTPUT ########")
+    import pandas as pd
+    
+    excel_path = f'{args.data_dir}/taxonomy_output.xlsx'
+    
+    with pd.ExcelWriter(excel_path, engine='openpyxl') as writer:
+        # Tab 1: Taxonomy structure
+        taxonomy_data = []
+        for dim in args.dimensions:
+            root = roots[dim]
+            # Add root level
+            taxonomy_data.append({
+                'Dimension': dim,
+                'Top Level': root.label,
+                'Second Level': '',
+                'Description': root.description if root.description else ''
+            })
+            # Add children
+            for child_label, child in root.get_children().items():
+                taxonomy_data.append({
+                    'Dimension': dim,
+                    'Top Level': root.label,
+                    'Second Level': child.label,
+                    'Description': child.description if child.description else ''
+                })
+        
+        taxonomy_df = pd.DataFrame(taxonomy_data)
+        taxonomy_df.to_excel(writer, sheet_name='Taxonomy', index=False)
+        
+        # Tab 2: Examples with paper mappings
+        examples_data = []
+        for dim in args.dimensions:
+            root = roots[dim]
+            for child_label, child in root.get_children().items():
+                # Get papers classified to this child node
+                for paper_id, paper in child.papers.items():
+                    examples_data.append({
+                        'Dimension': dim,
+                        'Top Level': root.label,
+                        'Second Level': child.label,
+                        'Paper Title': paper.title,
+                        'Abstract': paper.abstract
+                    })
+        
+        if examples_data:
+            examples_df = pd.DataFrame(examples_data)
+            examples_df.to_excel(writer, sheet_name='Examples', index=False)
+        else:
+            # Create empty dataframe with headers if no examples
+            examples_df = pd.DataFrame(columns=['Dimension', 'Top Level', 'Second Level', 'Paper Title', 'Abstract'])
+            examples_df.to_excel(writer, sheet_name='Examples', index=False)
+    
+    print(f"Excel output saved to: {excel_path}")
+    print(f"  - Taxonomy tab: {len(taxonomy_df)} rows")
+    print(f"  - Examples tab: {len(examples_df)} rows")
 
 
 

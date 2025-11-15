@@ -3,6 +3,8 @@ Dimension: evaluation_methods
 Description: None
 Level: 0
 Source: Initial
+# of Papers: 2
+Example Papers: [(0, 'Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023'), (1, 'Mid-term evaluation of the project "Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)"')]
 ----------------------------------------
 Children:
      Label: impact_assessment
@@ -16,6 +18,8 @@ Children:
      Description: Focuses on the implementation and operational aspects of humanitarian programs, assessing the efficiency and effectiveness of processes and procedures.
      Level: 1
      Source: Initial
+     # of Papers: 2
+     Example Papers: [(0, 'Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023'), (1, 'Mid-term evaluation of the project "Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)"')]
      ----------------------------------------
      Label: cost_effectiveness_analysis
      Dimension: evaluation_methods

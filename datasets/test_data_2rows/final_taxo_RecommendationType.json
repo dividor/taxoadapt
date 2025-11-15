@@ -37,17 +37,26 @@
             "label": "programmatic_adjustments",
             "description": "Suggestions for modifying existing humanitarian programs to enhance their impact, efficiency, and sustainability.",
             "level": 1,
-            "source": "initial"
+            "source": "initial",
+            "example_papers": [
+                [
+                    1,
+                    "Mid-term evaluation of the project \"Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)\""
+                ]
+            ],
+            "paper_ids": [
+                1
+            ]
         },
         {
             "label": "methodological_innovations",
-            "description": "Proposals for new or improved methods and tools to better assess and evaluate humanitarian interventions and outcomes.",
+            "description": "Proposals for new or improved methods and tools to assess and evaluate humanitarian interventions more accurately and comprehensively.",
             "level": 1,
             "source": "initial"
         },
         {
             "label": "scaling_strategies",
-            "description": "Strategies to expand successful humanitarian programs to reach a larger population or geographic area.",
+            "description": "Strategies to expand successful humanitarian initiatives to reach a larger population or geographic area, ensuring broader impact.",
             "level": 1,
             "source": "initial",
             "example_papers": [
@@ -62,7 +71,7 @@
         },
         {
             "label": "advocacy_priorities",
-            "description": "Identifying key areas and issues for advocacy to raise awareness and mobilize support for humanitarian causes and needs.",
+            "description": "Identifying key areas where advocacy efforts can lead to systemic changes and improvements in the humanitarian sector.",
             "level": 1,
             "source": "initial"
         }

@@ -20,13 +20,13 @@
     "children": [
         {
             "label": "impact_evaluation",
-            "description": "Assesses the long-term effects of humanitarian interventions on the target population, focusing on outcomes and changes brought about by the intervention.",
+            "description": "Assesses the long-term effects and outcomes of humanitarian interventions on the target population, often focusing on changes in well-being, health, or economic status.",
             "level": 1,
             "source": "initial"
         },
         {
             "label": "process_evaluation",
-            "description": "Examines the implementation and delivery of humanitarian programs, identifying strengths and weaknesses in the processes and procedures used.",
+            "description": "Examines the implementation and delivery of humanitarian programs, focusing on the processes, activities, and mechanisms that contribute to the program's success or failure.",
             "level": 1,
             "source": "initial",
             "example_papers": [
@@ -41,7 +41,7 @@
         },
         {
             "label": "formative_evaluation",
-            "description": "Conducted during the planning and early stages of a humanitarian intervention to improve the design and implementation of the program.",
+            "description": "Conducted during the early stages of a humanitarian intervention to improve the design and implementation of the program, often through feedback and iterative adjustments.",
             "level": 1,
             "source": "initial",
             "example_papers": [
@@ -56,13 +56,13 @@
         },
         {
             "label": "real_time_evaluation",
-            "description": "Provides immediate feedback during the course of a humanitarian response, allowing for timely adjustments and improvements to the intervention.",
+            "description": "Involves ongoing assessment and feedback during the implementation of a humanitarian response, allowing for immediate adjustments and improvements to the intervention.",
             "level": 1,
             "source": "initial"
         },
         {
             "label": "cost_effectiveness_analysis",
-            "description": "Evaluates the economic efficiency of humanitarian interventions by comparing the costs of different programs to their outcomes, aiming to maximize the benefits per unit of cost.",
+            "description": "Evaluates the cost and benefits of humanitarian interventions to determine the most efficient use of resources, often comparing different programs or strategies to identify the best value for money.",
             "level": 1,
             "source": "initial"
         }

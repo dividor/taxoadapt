@@ -20,7 +20,7 @@
     "children": [
         {
             "label": "un_agencies",
-            "description": "UN agencies are specialized organizations within the United Nations system that conduct or are evaluated in humanitarian responses, focusing on global issues such as health, education, and emergency relief.",
+            "description": "UN agencies are international organizations that are part of the United Nations system and play a crucial role in humanitarian response and evaluation.",
             "level": 1,
             "source": "initial",
             "example_papers": [
@@ -35,19 +35,19 @@
         },
         {
             "label": "international_ngos",
-            "description": "International NGOs are non-governmental organizations that operate across multiple countries, providing humanitarian assistance and being evaluated for their effectiveness in crisis response and development projects.",
+            "description": "International NGOs are non-governmental organizations that operate across multiple countries and are involved in humanitarian aid and evaluation efforts.",
             "level": 1,
             "source": "initial"
         },
         {
             "label": "local_ngos",
-            "description": "Local NGOs are non-governmental organizations that operate within a specific country or region, often providing community-based humanitarian assistance and being evaluated for their impact and sustainability.",
+            "description": "Local NGOs are non-governmental organizations that operate within a specific country or region and are often deeply rooted in the local community, contributing to humanitarian response and evaluation.",
             "level": 1,
             "source": "initial"
         },
         {
             "label": "government_agencies",
-            "description": "Government agencies are national or local governmental bodies that are involved in humanitarian responses, either through direct action or policy-making, and are evaluated for their effectiveness and coordination with other actors.",
+            "description": "Government agencies are official bodies of national or local governments that are involved in humanitarian response and the evaluation of humanitarian programs.",
             "level": 1,
             "source": "initial",
             "example_papers": [
@@ -62,7 +62,7 @@
         },
         {
             "label": "private_sector_actors",
-            "description": "Private sector actors are companies and businesses that contribute to humanitarian efforts through donations, resources, or direct involvement in relief operations, and are evaluated for their impact and ethical practices.",
+            "description": "Private sector actors are companies and businesses that contribute to humanitarian efforts through donations, resources, and expertise, and may also be subject to evaluation in their humanitarian roles.",
             "level": 1,
             "source": "initial"
         }

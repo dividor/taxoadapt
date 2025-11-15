@@ -9,7 +9,7 @@ Example Papers: [(0, 'Evaluation of the Government of  Seychelles & United Natio
 Children:
      Label: un_agencies
      Dimension: ActorType
-     Description: UN agencies are specialized organizations within the United Nations system that conduct or are evaluated in humanitarian responses, focusing on global issues such as health, education, and emergency relief.
+     Description: UN agencies are international organizations that are part of the United Nations system and play a crucial role in humanitarian response and evaluation.
      Level: 1
      Source: Initial
      # of Papers: 1
@@ -17,19 +17,19 @@ Children:
      ----------------------------------------
      Label: international_ngos
      Dimension: ActorType
-     Description: International NGOs are non-governmental organizations that operate across multiple countries, providing humanitarian assistance and being evaluated for their effectiveness in crisis response and development projects.
+     Description: International NGOs are non-governmental organizations that operate across multiple countries and are involved in humanitarian aid and evaluation efforts.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: local_ngos
      Dimension: ActorType
-     Description: Local NGOs are non-governmental organizations that operate within a specific country or region, often providing community-based humanitarian assistance and being evaluated for their impact and sustainability.
+     Description: Local NGOs are non-governmental organizations that operate within a specific country or region and are often deeply rooted in the local community, contributing to humanitarian response and evaluation.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: government_agencies
      Dimension: ActorType
-     Description: Government agencies are national or local governmental bodies that are involved in humanitarian responses, either through direct action or policy-making, and are evaluated for their effectiveness and coordination with other actors.
+     Description: Government agencies are official bodies of national or local governments that are involved in humanitarian response and the evaluation of humanitarian programs.
      Level: 1
      Source: Initial
      # of Papers: 1
@@ -37,7 +37,7 @@ Children:
      ----------------------------------------
      Label: private_sector_actors
      Dimension: ActorType
-     Description: Private sector actors are companies and businesses that contribute to humanitarian efforts through donations, resources, or direct involvement in relief operations, and are evaluated for their impact and ethical practices.
+     Description: Private sector actors are companies and businesses that contribute to humanitarian efforts through donations, resources, and expertise, and may also be subject to evaluation in their humanitarian roles.
      Level: 1
      Source: Initial
      ----------------------------------------

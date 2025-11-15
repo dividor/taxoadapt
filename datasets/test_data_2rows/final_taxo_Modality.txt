@@ -9,19 +9,19 @@ Example Papers: [(0, 'Evaluation of the Government of  Seychelles & United Natio
 Children:
      Label: cash_transfers
      Dimension: Modality
-     Description: Evaluations focused on the effectiveness and impact of providing monetary assistance directly to beneficiaries.
+     Description: Evaluations of programs that provide direct financial assistance to individuals or households to meet their basic needs or support livelihoods.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: in_kind_assistance
      Dimension: Modality
-     Description: Assessments of the provision of goods and services directly to those in need, such as food, clothing, and shelter.
+     Description: Evaluations of programs that provide physical goods or services directly to beneficiaries, such as food, shelter, or medical supplies.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: capacity_building
      Dimension: Modality
-     Description: Evaluations of programs designed to enhance the skills, knowledge, and resources of local organizations and communities.
+     Description: Evaluations of programs aimed at strengthening the skills, competencies, and abilities of individuals, organizations, or communities to effectively manage and sustain development efforts.
      Level: 1
      Source: Initial
      # of Papers: 2
@@ -29,13 +29,13 @@ Children:
      ----------------------------------------
      Label: service_delivery
      Dimension: Modality
-     Description: Analyses of the efficiency and quality of services provided by humanitarian organizations, including healthcare, education, and water supply.
+     Description: Evaluations of programs that focus on the provision of essential services, such as healthcare, education, or water and sanitation, to improve the well-being of affected populations.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: protection_services
      Dimension: Modality
-     Description: Evaluations of interventions aimed at safeguarding the rights and well-being of vulnerable populations, such as refugees and internally displaced persons.
+     Description: Evaluations of programs designed to protect individuals and communities from violence, coercion, and deliberate deprivation, ensuring their rights and dignity are upheld.
      Level: 1
      Source: Initial
      ----------------------------------------

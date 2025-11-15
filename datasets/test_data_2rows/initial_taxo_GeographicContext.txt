@@ -7,13 +7,13 @@ Source: Initial
 Children:
      Label: urbanareas
      Dimension: GeographicContext
-     Description: Evaluations conducted in densely populated urban settings, focusing on issues such as infrastructure, service delivery, and community resilience.
+     Description: Evaluations conducted in densely populated cities and towns, focusing on issues such as infrastructure, access to services, and community resilience.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: ruralareas
      Dimension: GeographicContext
-     Description: Evaluations conducted in less densely populated rural settings, often addressing challenges related to access to resources, healthcare, and education.
+     Description: Evaluations conducted in less populated, often agricultural regions, focusing on challenges like limited access to resources and services, and livelihood support.
      Level: 1
      Source: Initial
      ----------------------------------------
@@ -25,13 +25,13 @@ Children:
      ----------------------------------------
      Label: protractedcrises
      Dimension: GeographicContext
-     Description: Evaluations conducted in situations of long-term humanitarian need, such as ongoing conflicts or prolonged displacement, where sustained support and adaptive strategies are crucial.
+     Description: Evaluations conducted in situations of long-term humanitarian need, such as ongoing conflicts or prolonged displacement, focusing on sustained assistance and resilience building.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: naturaldisasters
      Dimension: GeographicContext
-     Description: Evaluations conducted in the aftermath of natural disasters, such as earthquakes, floods, or hurricanes, focusing on immediate response, recovery, and resilience building.
+     Description: Evaluations conducted in areas affected by sudden-onset events like earthquakes, floods, or hurricanes, focusing on emergency response, recovery, and disaster risk reduction.
      Level: 1
      Source: Initial
      ----------------------------------------

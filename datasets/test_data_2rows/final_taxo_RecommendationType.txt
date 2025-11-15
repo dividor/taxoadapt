@@ -20,16 +20,18 @@ Children:
      Description: Suggestions for modifying existing humanitarian programs to enhance their impact, efficiency, and sustainability.
      Level: 1
      Source: Initial
+     # of Papers: 1
+     Example Papers: [(1, 'Mid-term evaluation of the project "Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)"')]
      ----------------------------------------
      Label: methodological_innovations
      Dimension: RecommendationType
-     Description: Proposals for new or improved methods and tools to better assess and evaluate humanitarian interventions and outcomes.
+     Description: Proposals for new or improved methods and tools to assess and evaluate humanitarian interventions more accurately and comprehensively.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: scaling_strategies
      Dimension: RecommendationType
-     Description: Strategies to expand successful humanitarian programs to reach a larger population or geographic area.
+     Description: Strategies to expand successful humanitarian initiatives to reach a larger population or geographic area, ensuring broader impact.
      Level: 1
      Source: Initial
      # of Papers: 1
@@ -37,7 +39,7 @@ Children:
      ----------------------------------------
      Label: advocacy_priorities
      Dimension: RecommendationType
-     Description: Identifying key areas and issues for advocacy to raise awareness and mobilize support for humanitarian causes and needs.
+     Description: Identifying key areas where advocacy efforts can lead to systemic changes and improvements in the humanitarian sector.
      Level: 1
      Source: Initial
      ----------------------------------------

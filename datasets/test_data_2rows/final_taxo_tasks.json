@@ -19,26 +19,20 @@
     ],
     "children": [
         {
-            "label": "financialresources",
-            "description": "Financial resources encompass the monetary inputs provided to support humanitarian efforts, including funding from governments, NGOs, and private donors.",
+            "label": "impact_assessment",
+            "description": "Evaluating the effectiveness and outcomes of humanitarian interventions on affected populations.",
             "level": 1,
             "source": "initial"
         },
         {
-            "label": "humanresources",
-            "description": "Human resources include the personnel and volunteers who are deployed to provide aid, manage programs, and support affected communities in humanitarian crises.",
+            "label": "needs_assessment",
+            "description": "Identifying the specific needs and vulnerabilities of communities in crisis situations to inform humanitarian response.",
             "level": 1,
             "source": "initial"
         },
         {
-            "label": "materialgoods",
-            "description": "Material goods refer to the physical items and supplies provided to meet the immediate needs of affected populations, such as food, water, shelter, and medical supplies.",
-            "level": 1,
-            "source": "initial"
-        },
-        {
-            "label": "technicalassistance",
-            "description": "Technical assistance involves the provision of specialized skills and expertise to support the planning, implementation, and evaluation of humanitarian programs and projects.",
+            "label": "program_evaluation",
+            "description": "Assessing the performance, efficiency, and effectiveness of humanitarian programs and projects.",
             "level": 1,
             "source": "initial",
             "example_papers": [
@@ -57,8 +51,14 @@
             ]
         },
         {
-            "label": "informationsystems",
-            "description": "Information systems include the technologies and platforms used to collect, manage, and disseminate data and information critical for effective humanitarian response and evaluation.",
+            "label": "monitoring_and_evaluation",
+            "description": "Continuously tracking and assessing the progress and impact of humanitarian activities to ensure accountability and learning.",
+            "level": 1,
+            "source": "initial"
+        },
+        {
+            "label": "quality_assurance",
+            "description": "Ensuring that humanitarian assistance meets established standards and best practices to maintain high-quality service delivery.",
             "level": 1,
             "source": "initial"
         }

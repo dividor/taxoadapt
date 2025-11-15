@@ -274,6 +274,34 @@ Modality|||Modality: the type or form of humanitarian intervention being evaluat
 | Paper 1 Title | This evaluation examines... |
 | Paper 2 Title | We assess the impact of... |
 
+## Output Files
+
+After running the taxonomy construction, the system generates several output files:
+
+### Text and JSON Files
+- `initial_taxo_{dimension}.txt` - Initial taxonomy structure for each dimension (text format)
+- `final_taxo_{dimension}.txt` - Final taxonomy structure after expansion (text format)
+- `final_taxo_{dimension}.json` - Final taxonomy in JSON format with full metadata
+
+### Excel Output (`taxonomy_output.xlsx`)
+
+The system automatically creates an Excel file with two tabs:
+
+**Tab 1: Taxonomy**
+- Column 1: `Dimension` - The dimension name
+- Column 2: `Top Level` - Root level category (topic name)
+- Column 3: `Second Level` - Child categories under the root
+- Column 4: `Description` - Description of each category
+
+**Tab 2: Examples**
+- Column 1: `Dimension` - The dimension name
+- Column 2: `Top Level` - Root level category
+- Column 3: `Second Level` - Child category the paper was classified into
+- Column 4: `Paper Title` - Title of the classified paper
+- Column 5: `Abstract` - Abstract of the classified paper
+
+This Excel file provides an easy-to-navigate view of your taxonomy structure and shows which papers were classified into each category.
+
 ## Custom Dataset
 To use a custom dataset, you need to add it to the `construct_dataset` function in `main.py`. You may add it as follows:
 

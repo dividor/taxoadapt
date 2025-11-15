@@ -20,31 +20,31 @@
     "children": [
         {
             "label": "health",
-            "description": "Evaluations of programs and interventions aimed at improving physical and mental health outcomes in crisis-affected populations.",
+            "description": "Evaluations focused on the effectiveness, impact, and quality of healthcare services and interventions in humanitarian settings.",
             "level": 1,
             "source": "initial"
         },
         {
             "label": "nutrition",
-            "description": "Assessments of initiatives designed to ensure adequate nutrition and prevent malnutrition in vulnerable communities during and after humanitarian crises.",
+            "description": "Assessments of programs and initiatives aimed at improving nutritional status and addressing malnutrition in crisis-affected populations.",
             "level": 1,
             "source": "initial"
         },
         {
             "label": "shelter",
-            "description": "Reviews of strategies and practices for providing safe, dignified, and sustainable shelter solutions to individuals and families displaced by disasters or conflicts.",
+            "description": "Evaluations of the provision and management of temporary and permanent housing solutions for displaced individuals and communities.",
             "level": 1,
             "source": "initial"
         },
         {
             "label": "education",
-            "description": "Analyses of educational programs and policies that aim to ensure access to quality education for children and youth in emergency settings.",
+            "description": "Research and assessments of educational programs and initiatives designed to support learning and development in humanitarian contexts.",
             "level": 1,
             "source": "initial"
         },
         {
             "label": "water_and_sanitation",
-            "description": "Evaluations of water, sanitation, and hygiene (WASH) programs to ensure safe and sustainable access to clean water and proper sanitation facilities in crisis-affected areas.",
+            "description": "Evaluations of water supply, sanitation, and hygiene (WASH) programs to ensure safe and sustainable access to these essential services.",
             "level": 1,
             "source": "initial"
         }

@@ -20,13 +20,13 @@
     "children": [
         {
             "label": "quantitative_data",
-            "description": "Numerical data collected through surveys, measurements, and statistical analysis to evaluate the impact and effectiveness of humanitarian interventions.",
+            "description": "Numerical data collected through surveys, experiments, or other structured methods to measure outcomes and impacts in humanitarian settings.",
             "level": 1,
             "source": "initial"
         },
         {
             "label": "qualitative_insights",
-            "description": "In-depth, descriptive information gathered through interviews, focus groups, and observations to understand the experiences and perceptions of affected populations.",
+            "description": "In-depth, descriptive information gathered through interviews, focus groups, and observations to understand the experiences and perspectives of affected populations.",
             "level": 1,
             "source": "initial",
             "example_papers": [
@@ -41,19 +41,28 @@
         },
         {
             "label": "participatory_data",
-            "description": "Data generated through participatory methods where affected communities are actively involved in the data collection and analysis process, ensuring their voices and perspectives are central to the evaluation.",
+            "description": "Data generated through collaborative processes involving community members, ensuring that local voices and needs are central to the evaluation.",
             "level": 1,
             "source": "initial"
         },
         {
             "label": "administrative_data",
-            "description": "Information derived from existing records and databases maintained by humanitarian organizations, governments, and other institutions to assess program performance and service delivery.",
+            "description": "Information derived from existing records and databases maintained by organizations, governments, or other entities to assess program performance and impact.",
             "level": 1,
-            "source": "initial"
+            "source": "initial",
+            "example_papers": [
+                [
+                    0,
+                    "Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023"
+                ]
+            ],
+            "paper_ids": [
+                0
+            ]
         },
         {
-            "label": "indigenous_knowledge",
-            "description": "Traditional and local knowledge systems and practices that are integrated into the evaluation process to provide context-specific insights and enhance the cultural relevance of humanitarian interventions.",
+            "label": "satellite_imagery",
+            "description": "Visual and spatial data captured from satellites to monitor environmental changes, infrastructure damage, and population movements in crisis-affected areas.",
             "level": 1,
             "source": "initial"
         }

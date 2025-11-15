@@ -7,31 +7,31 @@ Source: Initial
 Children:
      Label: cash_transfers
      Dimension: Modality
-     Description: Evaluations of programs that provide direct monetary assistance to individuals or households to meet their basic needs or support economic activities.
+     Description: Evaluations of programs that provide direct financial assistance to individuals or households to meet their basic needs or support livelihoods.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: in_kind_assistance
      Dimension: Modality
-     Description: Evaluations of programs that provide goods or services directly to beneficiaries, such as food, shelter, or medical supplies, to address immediate needs.
+     Description: Evaluations of programs that provide physical goods or services directly to beneficiaries, such as food, shelter, or medical supplies.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: capacity_building
      Dimension: Modality
-     Description: Evaluations of programs aimed at enhancing the skills, knowledge, and organizational capabilities of local communities, NGOs, or government institutions to improve their resilience and self-reliance.
+     Description: Evaluations of programs aimed at strengthening the skills, competencies, and abilities of individuals, organizations, or communities to effectively manage and sustain development efforts.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: service_delivery
      Dimension: Modality
-     Description: Evaluations of programs that focus on the provision of essential services, such as healthcare, education, and water and sanitation, to ensure sustainable and equitable access for vulnerable populations.
+     Description: Evaluations of programs that focus on the provision of essential services, such as healthcare, education, or water and sanitation, to improve the well-being of affected populations.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: protection_services
      Dimension: Modality
-     Description: Evaluations of programs designed to protect individuals and communities from violence, abuse, exploitation, and other forms of harm, ensuring their rights and dignity are upheld.
+     Description: Evaluations of programs designed to protect individuals and communities from violence, coercion, and deliberate deprivation, ensuring their rights and dignity are upheld.
      Level: 1
      Source: Initial
      ----------------------------------------

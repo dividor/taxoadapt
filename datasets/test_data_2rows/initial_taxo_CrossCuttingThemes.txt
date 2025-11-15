@@ -25,13 +25,13 @@ Children:
      ----------------------------------------
      Label: conflict_sensitivity
      Dimension: CrossCuttingThemes
-     Description: Evaluates the degree to which humanitarian actions are designed and implemented with an understanding of the local conflict dynamics, aiming to avoid exacerbating tensions.
+     Description: Evaluates the impact of humanitarian actions on conflict dynamics, ensuring that interventions do not exacerbate tensions and contribute to peacebuilding.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: accountability_to_affected_populations
      Dimension: CrossCuttingThemes
-     Description: Focuses on the mechanisms and practices that ensure humanitarian organizations are transparent, responsive, and accountable to the communities they serve.
+     Description: Focuses on the mechanisms and practices that ensure humanitarian organizations are accountable to the communities they serve, promoting transparency and responsiveness.
      Level: 1
      Source: Initial
      ----------------------------------------

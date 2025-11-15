@@ -20,13 +20,13 @@
     "children": [
         {
             "label": "livelihoods",
-            "description": "This domain focuses on the economic and social activities that individuals and communities engage in to secure a sustainable and dignified life.",
+            "description": "This domain assesses the impact of interventions on people's ability to earn a living and maintain their economic stability.",
             "level": 1,
             "source": "initial"
         },
         {
             "label": "resilience",
-            "description": "This domain assesses the ability of individuals, communities, and systems to anticipate, prepare for, respond to, and recover from shocks and stresses.",
+            "description": "This domain evaluates how well individuals, communities, and systems can withstand, adapt to, and recover from shocks and stresses.",
             "level": 1,
             "source": "initial",
             "example_papers": [
@@ -41,13 +41,13 @@
         },
         {
             "label": "well-being",
-            "description": "This domain measures the overall state of health, happiness, and satisfaction of individuals and communities, encompassing physical, mental, and social dimensions.",
+            "description": "This domain measures the overall quality of life and psychological health of individuals and communities affected by humanitarian crises.",
             "level": 1,
             "source": "initial"
         },
         {
             "label": "program_effectiveness",
-            "description": "This domain evaluates the extent to which humanitarian programs achieve their intended outcomes and goals, including efficiency, impact, and sustainability.",
+            "description": "This domain focuses on the extent to which humanitarian programs achieve their intended goals and deliver value for resources invested.",
             "level": 1,
             "source": "initial",
             "example_papers": [
@@ -62,7 +62,7 @@
         },
         {
             "label": "behavioral_change",
-            "description": "This domain examines changes in individual and community behaviors, attitudes, and practices as a result of humanitarian interventions and programs.",
+            "description": "This domain examines changes in behaviors and practices among beneficiaries as a result of humanitarian interventions.",
             "level": 1,
             "source": "initial",
             "example_papers": [

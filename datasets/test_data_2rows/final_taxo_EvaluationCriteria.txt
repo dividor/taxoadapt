@@ -7,35 +7,37 @@ Source: Initial
 Example Papers: [(0, 'Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023'), (1, 'Mid-term evaluation of the project "Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)"')]
 ----------------------------------------
 Children:
-     Label: coverage
+     Label: relevance
      Dimension: EvaluationCriteria
-     Description: Assesses the extent to which the humanitarian response reaches the target population and meets their needs.
+     Description: Assesses how well the humanitarian intervention aligns with the needs and priorities of the affected population and the overall context.
      Level: 1
      Source: Initial
+     # of Papers: 2
+     Example Papers: [(0, 'Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023'), (1, 'Mid-term evaluation of the project "Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)"')]
      ----------------------------------------
-     Label: appropriateness
+     Label: effectiveness
      Dimension: EvaluationCriteria
-     Description: Evaluates whether the humanitarian interventions are suitable and relevant to the context and needs of the affected population.
+     Description: Evaluates the extent to which the humanitarian intervention has achieved its intended outcomes and goals.
      Level: 1
      Source: Initial
-     # of Papers: 1
-     Example Papers: [(0, 'Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023')]
+     # of Papers: 2
+     Example Papers: [(0, 'Evaluation of the Government of  Seychelles & United Nations  Strategic Partnership Framework (SPF) 2019-2023'), (1, 'Mid-term evaluation of the project "Upscaling climate resilience measures in the Dry Corridor agroecosystems of El Salvador (RECLIMA)"')]
      ----------------------------------------
-     Label: protection
+     Label: efficiency
      Dimension: EvaluationCriteria
-     Description: Focuses on ensuring that humanitarian actions do not cause harm and that the rights and safety of affected populations are protected.
-     Level: 1
-     Source: Initial
-     ----------------------------------------
-     Label: participation
-     Dimension: EvaluationCriteria
-     Description: Measures the extent to which affected populations are involved in the planning, implementation, and monitoring of humanitarian activities.
+     Description: Measures the ratio of the outputs to the inputs in terms of resources used, to determine if the intervention was cost-effective.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: impact
      Dimension: EvaluationCriteria
-     Description: Assesses the positive and negative changes in the lives of affected populations as a result of the humanitarian intervention.
+     Description: Examines the positive and negative changes in the lives of the affected population that can be attributed to the humanitarian intervention.
+     Level: 1
+     Source: Initial
+     ----------------------------------------
+     Label: sustainability
+     Dimension: EvaluationCriteria
+     Description: Assesses the likelihood that the benefits of the humanitarian intervention will continue after the project has ended, considering both short-term and long-term effects.
      Level: 1
      Source: Initial
      # of Papers: 1

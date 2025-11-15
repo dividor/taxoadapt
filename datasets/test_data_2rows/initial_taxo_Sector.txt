@@ -7,7 +7,7 @@ Source: Initial
 Children:
      Label: health
      Dimension: Sector
-     Description: Evaluations focused on the effectiveness and impact of healthcare services and interventions in humanitarian settings.
+     Description: Evaluations focused on the effectiveness, impact, and quality of healthcare services and interventions in humanitarian settings.
      Level: 1
      Source: Initial
      ----------------------------------------
@@ -19,13 +19,13 @@ Children:
      ----------------------------------------
      Label: shelter
      Dimension: Sector
-     Description: Evaluations of the provision and quality of temporary and permanent housing solutions for displaced individuals and communities.
+     Description: Evaluations of the provision and management of temporary and permanent housing solutions for displaced individuals and communities.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: education
      Dimension: Sector
-     Description: Research on the effectiveness of educational programs and the impact of educational interventions in humanitarian contexts.
+     Description: Research and assessments of educational programs and initiatives designed to support learning and development in humanitarian contexts.
      Level: 1
      Source: Initial
      ----------------------------------------

@@ -47,13 +47,13 @@
         },
         {
             "label": "protractedcrises",
-            "description": "Evaluations conducted in long-term crisis situations, such as ongoing conflicts or prolonged displacement, focusing on sustained humanitarian assistance and development efforts.",
+            "description": "Evaluations conducted in situations of long-term humanitarian need, such as ongoing conflicts or prolonged displacement, focusing on sustained assistance and resilience building.",
             "level": 1,
             "source": "initial"
         },
         {
             "label": "naturaldisasters",
-            "description": "Evaluations conducted in areas affected by sudden natural events like earthquakes, floods, or hurricanes, focusing on emergency response, recovery, and disaster risk reduction.",
+            "description": "Evaluations conducted in areas affected by sudden-onset events like earthquakes, floods, or hurricanes, focusing on emergency response, recovery, and disaster risk reduction.",
             "level": 1,
             "source": "initial"
         }

@@ -5,33 +5,33 @@ Level: 0
 Source: Initial
 ----------------------------------------
 Children:
-     Label: financial_resources
+     Label: financialresources
      Dimension: ResourceInputs
-     Description: Financial resources encompass the monetary contributions and funding mechanisms used to support humanitarian efforts, including grants, donations, and budget allocations.
+     Description: Financial resources encompass the monetary inputs provided to support humanitarian efforts, including funding from governments, NGOs, and private donors.
      Level: 1
      Source: Initial
      ----------------------------------------
-     Label: human_resources
+     Label: humanresources
      Dimension: ResourceInputs
-     Description: Human resources refer to the personnel and skilled labor involved in humanitarian operations, including volunteers, aid workers, and medical staff.
+     Description: Human resources include the personnel and volunteers who are deployed to provide aid, manage programs, and support affected communities in humanitarian crises.
      Level: 1
      Source: Initial
      ----------------------------------------
-     Label: material_goods
+     Label: materialgoods
      Dimension: ResourceInputs
-     Description: Material goods include essential supplies and commodities provided to affected populations, such as food, water, shelter materials, and medical supplies.
+     Description: Material goods refer to the physical items and supplies provided to meet the immediate needs of affected populations, such as food, water, shelter, and medical supplies.
      Level: 1
      Source: Initial
      ----------------------------------------
-     Label: technical_assistance
+     Label: technicalassistance
      Dimension: ResourceInputs
-     Description: Technical assistance involves the provision of specialized skills and expertise to enhance the effectiveness of humanitarian interventions, such as engineering, logistics, and health services.
+     Description: Technical assistance involves the provision of specialized skills and expertise to support the planning, implementation, and evaluation of humanitarian programs and projects.
      Level: 1
      Source: Initial
      ----------------------------------------
-     Label: information_systems
+     Label: informationsystems
      Dimension: ResourceInputs
-     Description: Information systems are the technological and data management tools used to coordinate and optimize humanitarian responses, including communication networks, databases, and monitoring platforms.
+     Description: Information systems include the technologies and platforms used to collect, manage, and disseminate data and information critical for effective humanitarian response and evaluation.
      Level: 1
      Source: Initial
      ----------------------------------------

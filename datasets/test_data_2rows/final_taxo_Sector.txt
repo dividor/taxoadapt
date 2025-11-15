@@ -9,31 +9,31 @@ Example Papers: [(0, 'Evaluation of the Government of  Seychelles & United Natio
 Children:
      Label: health
      Dimension: Sector
-     Description: Evaluations of programs and interventions aimed at improving physical and mental health outcomes in crisis-affected populations.
+     Description: Evaluations focused on the effectiveness, impact, and quality of healthcare services and interventions in humanitarian settings.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: nutrition
      Dimension: Sector
-     Description: Assessments of initiatives designed to ensure adequate nutrition and prevent malnutrition in vulnerable communities during and after humanitarian crises.
+     Description: Assessments of programs and initiatives aimed at improving nutritional status and addressing malnutrition in crisis-affected populations.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: shelter
      Dimension: Sector
-     Description: Reviews of strategies and practices for providing safe, dignified, and sustainable shelter solutions to individuals and families displaced by disasters or conflicts.
+     Description: Evaluations of the provision and management of temporary and permanent housing solutions for displaced individuals and communities.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: education
      Dimension: Sector
-     Description: Analyses of educational programs and policies that aim to ensure access to quality education for children and youth in emergency settings.
+     Description: Research and assessments of educational programs and initiatives designed to support learning and development in humanitarian contexts.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: water_and_sanitation
      Dimension: Sector
-     Description: Evaluations of water, sanitation, and hygiene (WASH) programs to ensure safe and sustainable access to clean water and proper sanitation facilities in crisis-affected areas.
+     Description: Evaluations of water supply, sanitation, and hygiene (WASH) programs to ensure safe and sustainable access to these essential services.
      Level: 1
      Source: Initial
      ----------------------------------------

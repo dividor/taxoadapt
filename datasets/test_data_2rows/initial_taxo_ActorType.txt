@@ -7,31 +7,31 @@ Source: Initial
 Children:
      Label: un_agencies
      Dimension: ActorType
-     Description: UN agencies are international organizations that conduct or are evaluated in humanitarian responses, focusing on global issues such as health, education, and emergency relief.
+     Description: UN agencies are international organizations that are part of the United Nations system and play a crucial role in humanitarian response and evaluation.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: international_ngos
      Dimension: ActorType
-     Description: International NGOs are non-governmental organizations that operate across multiple countries, providing humanitarian assistance and support in various sectors like disaster response, development, and advocacy.
+     Description: International NGOs are non-governmental organizations that operate across multiple countries and are involved in humanitarian aid and evaluation efforts.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: local_ngos
      Dimension: ActorType
-     Description: Local NGOs are non-governmental organizations based and operating within a specific country or region, often providing context-specific humanitarian aid and support to local communities.
+     Description: Local NGOs are non-governmental organizations that operate within a specific country or region and are often deeply rooted in the local community, contributing to humanitarian response and evaluation.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: government_agencies
      Dimension: ActorType
-     Description: Government agencies are official bodies of national or local governments that are involved in humanitarian responses, including policy-making, funding, and direct service delivery.
+     Description: Government agencies are official bodies of national or local governments that are involved in humanitarian response and the evaluation of humanitarian programs.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: private_sector_actors
      Dimension: ActorType
-     Description: Private sector actors are companies and businesses that contribute to humanitarian efforts through donations, expertise, technology, and other resources, often in partnership with other organizations.
+     Description: Private sector actors are companies and businesses that contribute to humanitarian efforts through donations, resources, and expertise, and may also be subject to evaluation in their humanitarian roles.
      Level: 1
      Source: Initial
      ----------------------------------------

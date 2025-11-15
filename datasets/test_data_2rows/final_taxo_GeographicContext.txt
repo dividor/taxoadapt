@@ -29,13 +29,13 @@ Children:
      ----------------------------------------
      Label: protractedcrises
      Dimension: GeographicContext
-     Description: Evaluations conducted in long-term crisis situations, such as ongoing conflicts or prolonged displacement, focusing on sustained humanitarian assistance and development efforts.
+     Description: Evaluations conducted in situations of long-term humanitarian need, such as ongoing conflicts or prolonged displacement, focusing on sustained assistance and resilience building.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: naturaldisasters
      Dimension: GeographicContext
-     Description: Evaluations conducted in areas affected by sudden natural events like earthquakes, floods, or hurricanes, focusing on emergency response, recovery, and disaster risk reduction.
+     Description: Evaluations conducted in areas affected by sudden-onset events like earthquakes, floods, or hurricanes, focusing on emergency response, recovery, and disaster risk reduction.
      Level: 1
      Source: Initial
      ----------------------------------------

@@ -7,31 +7,31 @@ Source: Initial
 Children:
      Label: quantitative_data
      Dimension: EvidenceType
-     Description: Numerical data collected through surveys, measurements, and other structured methods to assess the impact and effectiveness of humanitarian interventions.
+     Description: Numerical data collected through surveys, experiments, or other structured methods to measure outcomes and impacts in humanitarian settings.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: qualitative_insights
      Dimension: EvidenceType
-     Description: Non-numerical data gathered through interviews, focus groups, and observations to understand the experiences, perceptions, and needs of affected populations.
+     Description: In-depth, descriptive information gathered through interviews, focus groups, and observations to understand the experiences and perspectives of affected populations.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: participatory_data
      Dimension: EvidenceType
-     Description: Data generated through participatory methods where affected communities are actively involved in the data collection and analysis process, ensuring their voices and perspectives are central to the evaluation.
+     Description: Data generated through collaborative processes involving community members, ensuring that local voices and needs are central to the evaluation.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: administrative_data
      Dimension: EvidenceType
-     Description: Data derived from existing records and reports maintained by humanitarian organizations, governments, and other institutions to monitor and evaluate program performance and outcomes.
+     Description: Information derived from existing records and databases maintained by organizations, governments, or other entities to assess program performance and impact.
      Level: 1
      Source: Initial
      ----------------------------------------
      Label: satellite_imagery
      Dimension: EvidenceType
-     Description: Geospatial data obtained from satellite images to assess the physical conditions and changes in affected areas, such as damage to infrastructure, displacement of populations, and environmental impacts.
+     Description: Visual and spatial data captured from satellites to monitor environmental changes, infrastructure damage, and population movements in crisis-affected areas.
      Level: 1
      Source: Initial
      ----------------------------------------
