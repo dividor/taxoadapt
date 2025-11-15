@@ -47,18 +47,10 @@ def clean_json_string(json_string):
         cleaned_string = re.sub(r'\s*---$', '', cleaned_string)
     
     # Remove any text after the JSON (like "### Explanation:")
-    # Find the last closing brace/bracket and cut off everything after it
+    # Find the first complete JSON object/array by tracking braces
     cleaned_string = cleaned_string.strip()
     
-    # Find the last } or ] (end of JSON object/array)
-    last_brace = cleaned_string.rfind('}')
-    last_bracket = cleaned_string.rfind(']')
-    last_json_char = max(last_brace, last_bracket)
-    
-    if last_json_char != -1:
-        cleaned_string = cleaned_string[:last_json_char + 1]
-    
-    # Replace Python-style booleans with JSON-style
+    # Replace Python-style booleans with JSON-style (do this before parsing)
     cleaned_string = cleaned_string.replace('True', 'true')
     cleaned_string = cleaned_string.replace('False', 'false')
     cleaned_string = cleaned_string.replace('None', 'null')
@@ -67,6 +59,40 @@ def clean_json_string(json_string):
     # Match pattern: word followed by colon (not inside quotes)
     # This handles: explanation: "..." -> "explanation": "..."
     cleaned_string = re.sub(r'(\n\s*)([a-zA-Z_][a-zA-Z0-9_]*)\s*:', r'\1"\2":', cleaned_string)
+    
+    # Find the end of the first complete JSON object/array by tracking braces
+    # This handles cases where LLM outputs extra closing braces
+    if cleaned_string and cleaned_string[0] in '{[':
+        brace_count = 0
+        in_string = False
+        escape_next = False
+        start_char = cleaned_string[0]
+        end_char = '}' if start_char == '{' else ']'
+        
+        for i, char in enumerate(cleaned_string):
+            # Handle string escapes
+            if escape_next:
+                escape_next = False
+                continue
+            if char == '\\':
+                escape_next = True
+                continue
+            
+            # Track if we're inside a string
+            if char == '"' and not escape_next:
+                in_string = not in_string
+                continue
+            
+            # Only count braces outside of strings
+            if not in_string:
+                if char == start_char:
+                    brace_count += 1
+                elif char == end_char:
+                    brace_count -= 1
+                    if brace_count == 0:
+                        # Found the end of the first complete JSON object/array
+                        cleaned_string = cleaned_string[:i + 1]
+                        break
     
     return cleaned_string.strip()
 
