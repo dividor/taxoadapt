@@ -183,7 +183,11 @@ class HuggingFaceProvider(LLMProvider):
         if not self.api_key:
             raise ValueError("Hugging Face API key not found. Set HUGGINGFACE_API_KEY environment variable.")
         
-        self.client = InferenceClient(token=self.api_key)
+        # Use the new Hugging Face Inference API endpoint
+        self.client = InferenceClient(
+            token=self.api_key,
+            base_url="https://api-inference.huggingface.co/models"
+        )
     
     def chat(self, messages: List[Dict[str, str]], **kwargs) -> str:
         """Send a chat completion request to Hugging Face"""
