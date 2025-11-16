@@ -50,15 +50,21 @@ def clean_json_string(json_string):
     # Find the first complete JSON object/array by tracking braces
     cleaned_string = cleaned_string.strip()
     
-    # Replace Python-style booleans with JSON-style (do this before parsing)
-    cleaned_string = cleaned_string.replace('True', 'true')
-    cleaned_string = cleaned_string.replace('False', 'false')
-    cleaned_string = cleaned_string.replace('None', 'null')
-    
     # Fix unquoted property names (JavaScript-style to JSON-style)
     # Match pattern: word followed by colon (not inside quotes)
     # This handles: explanation: "..." -> "explanation": "..."
     cleaned_string = re.sub(r'(\n\s*)([a-zA-Z_][a-zA-Z0-9_]*)\s*:', r'\1"\2":', cleaned_string)
+    
+    # Handle None values in arrays - convert ['None'] or ["None"] to []
+    # This handles cases where LLM returns None as a classification
+    cleaned_string = re.sub(r'\[\s*["\']None["\']\s*\]', '[]', cleaned_string)
+    
+    # Replace Python-style booleans with JSON-style (do this after fixing property names)
+    cleaned_string = cleaned_string.replace('True', 'true')
+    cleaned_string = cleaned_string.replace('False', 'false')
+    # Don't do a blanket None->null replacement as it can cause issues in strings
+    # Instead, replace None when it's a standalone value (not in quotes)
+    cleaned_string = re.sub(r'\bNone\b', 'null', cleaned_string)
     
     # Find the end of the first complete JSON object/array by tracking braces
     # This handles cases where LLM outputs extra closing braces
