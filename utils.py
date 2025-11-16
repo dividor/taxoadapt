@@ -55,9 +55,19 @@ def clean_json_string(json_string):
     # This handles: explanation: "..." -> "explanation": "..."
     cleaned_string = re.sub(r'(\n\s*)([a-zA-Z_][a-zA-Z0-9_]*)\s*:', r'\1"\2":', cleaned_string)
     
-    # Handle None values in arrays - convert ['None'] or ["None"] to []
+    # Convert single quotes to double quotes for string delimiters in arrays
+    # Pattern: ['string'] or ['string1', 'string2']
+    # Use lookbehind/lookahead to only match quotes that are string delimiters
+    # Match: ['...' where [ is before the quote
+    cleaned_string = re.sub(r"(\[)\s*'", r'\1"', cleaned_string)
+    # Match: '...'] where ] is after the quote  
+    cleaned_string = re.sub(r"'\s*(\])", r'"\1', cleaned_string)
+    # Match: ', ' (comma space) between array elements
+    cleaned_string = re.sub(r"',\s*'", r'", "', cleaned_string)
+    
+    # Handle None values in arrays - convert ["None"] to []
     # This handles cases where LLM returns None as a classification
-    cleaned_string = re.sub(r'\[\s*["\']None["\']\s*\]', '[]', cleaned_string)
+    cleaned_string = re.sub(r'\[\s*"None"\s*\]', '[]', cleaned_string)
     
     # Replace Python-style booleans with JSON-style (do this after fixing property names)
     cleaned_string = cleaned_string.replace('True', 'true')
