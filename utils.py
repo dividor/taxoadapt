@@ -55,15 +55,24 @@ def clean_json_string(json_string):
     # This handles: explanation: "..." -> "explanation": "..."
     cleaned_string = re.sub(r'(\n\s*)([a-zA-Z_][a-zA-Z0-9_]*)\s*:', r'\1"\2":', cleaned_string)
     
-    # Convert single quotes to double quotes for string delimiters in arrays
-    # Pattern: ['string'] or ['string1', 'string2']
-    # Use lookbehind/lookahead to only match quotes that are string delimiters
-    # Match: ['...' where [ is before the quote
-    cleaned_string = re.sub(r"(\[)\s*'", r'\1"', cleaned_string)
-    # Match: '...'] where ] is after the quote  
-    cleaned_string = re.sub(r"'\s*(\])", r'"\1', cleaned_string)
-    # Match: ', ' (comma space) between array elements
-    cleaned_string = re.sub(r"',\s*'", r'", "', cleaned_string)
+    # Convert single quotes to double quotes ONLY for array values that are entirely single-quoted
+    # This needs to be done carefully to not affect single quotes inside double-quoted strings
+    # Pattern: match arrays like: ['value'] or ['v1', 'v2', 'v3']
+    # Only replace if the array ONLY contains single-quoted strings (no double quotes)
+    def replace_single_quote_array(match):
+        """Replace single quotes with double quotes in array literals"""
+        array_content = match.group(0)
+        # Only replace if the array doesn't already have double-quoted strings mixed in
+        # Check if this is a pure single-quote array
+        if '"' not in array_content or array_content.count('"') == 0:
+            # Replace opening quotes after [ or comma
+            array_content = re.sub(r"(\[|,)\s*'", r'\1"', array_content)
+            # Replace closing quotes before ] or comma
+            array_content = re.sub(r"'(\s*[,\]])", r'"\1', array_content)
+        return array_content
+    
+    # Match array literals: [...] and apply the replacement function
+    cleaned_string = re.sub(r'\[.*?\]', replace_single_quote_array, cleaned_string, flags=re.DOTALL)
     
     # Handle None values in arrays - convert ["None"] to []
     # This handles cases where LLM returns None as a classification
