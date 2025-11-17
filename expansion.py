@@ -81,14 +81,17 @@ def expandNodeWidth(args, node, id2node, label2node):
     if not success:
         error_msg = (
             f"\n{'='*80}\n"
-            f"CRITICAL ERROR: Failed width expansion after {attempts} attempts!\n"
+            f"WARNING: Failed width expansion after {attempts} attempts!\n"
             f"Node: {node.label} ({node.dimension})\n"
             f"{'='*80}\n"
             f"Last cluster_topics output (FULL):\n{cluster_topics if 'cluster_topics' in locals() else 'No output'}\n"
             f"{'='*80}\n"
         )
         print(error_msg)
-        raise RuntimeError(error_msg)
+        # Log to errors.log
+        with open('errors.log', 'a', encoding='utf-8') as f:
+            f.write(error_msg + '\n')
+        return []
     
     print('clusters:\n', cluster_outputs)
     cluster_outputs = cluster_outputs['new_cluster_topics']
@@ -193,14 +196,17 @@ def expandNodeDepth(args, node, id2node, label2node):
     if not success:
         error_msg = (
             f"\n{'='*80}\n"
-            f"CRITICAL ERROR: Failed depth expansion after {attempts} attempts!\n"
+            f"WARNING: Failed depth expansion after {attempts} attempts!\n"
             f"Node: {node.label} ({node.dimension})\n"
             f"{'='*80}\n"
             f"Last cluster_topics output (FULL):\n{cluster_topics if 'cluster_topics' in locals() else 'No output'}\n"
             f"{'='*80}\n"
         )
         print(error_msg)
-        raise RuntimeError(error_msg)
+        # Log to errors.log
+        with open('errors.log', 'a', encoding='utf-8') as f:
+            f.write(error_msg + '\n')
+        return [], False
 
     final_expansion = []
     cluster_outputs = cluster_outputs['new_cluster_topics']

@@ -302,6 +302,22 @@ The system automatically creates an Excel file with two tabs:
 
 This Excel file provides an easy-to-navigate view of your taxonomy structure and shows which papers were classified into each category.
 
+### Error Logging (`errors.log`)
+
+During taxonomy construction, JSON parsing errors and expansion failures are logged to `errors.log` instead of stopping execution. This allows the process to continue while capturing diagnostic information:
+
+- **JSON Parse Errors**: Full raw output and cleaned output for debugging LLM responses
+- **Expansion Failures**: Details about failed width/depth expansions after retry attempts
+- **Empty Classifications**: Papers that couldn't be classified due to errors are marked as "unlabeled"
+
+The system will:
+- Print warnings to console for visibility
+- Continue processing remaining papers
+- Log complete error details to `errors.log` for later review
+- Treat affected papers as unlabeled in the final taxonomy
+
+**Review `errors.log` after completion** to identify any systematic issues with LLM responses that may need attention (e.g., improving prompts, adjusting API settings, or refining dimension definitions).
+
 ## Sampling Humanitarian Data
 
 Before running the full taxonomy construction, you may want to create a balanced sample of your data. The `sample_humanitarian_data.py` script helps you create a stratified sample across agencies:

@@ -154,7 +154,7 @@ class Node:
 
         output = promptLLM(args, prompts, schema=ClassifySchema, max_new_tokens=3000)
         
-        # Parse outputs with strict error handling
+        # Parse outputs with error logging
         output_dict = []
         for i, c in enumerate(output):
             try:
@@ -162,18 +162,22 @@ class Node:
                 if not cleaned or cleaned.strip() == '':
                     error_msg = (
                         f"\n{'='*80}\n"
-                        f"CRITICAL ERROR: Empty output for prompt {i}\n"
+                        f"WARNING: Empty output for prompt {i}\n"
                         f"Raw output (FULL):\n{c}\n"
                         f"{'='*80}\n"
                     )
                     print(error_msg)
-                    raise ValueError(error_msg)
+                    # Log to errors.log
+                    with open('errors.log', 'a', encoding='utf-8') as f:
+                        f.write(error_msg + '\n')
+                    # Use empty classification
+                    output_dict.append({'paper_id': i, 'class_options': [], 'class_labels': []})
                 else:
                     output_dict.append(json.loads(cleaned))
             except json.JSONDecodeError as e:
                 error_msg = (
                     f"\n{'='*80}\n"
-                    f"CRITICAL ERROR: JSON parse error for prompt {i}: {e}\n"
+                    f"WARNING: JSON parse error for prompt {i}: {e}\n"
                     f"{'='*80}\n"
                     f"Raw output (FULL):\n{c}\n"
                     f"{'='*80}\n"
@@ -181,7 +185,11 @@ class Node:
                     f"{'='*80}\n"
                 )
                 print(error_msg)
-                raise RuntimeError(error_msg) from e
+                # Log to errors.log
+                with open('errors.log', 'a', encoding='utf-8') as f:
+                    f.write(error_msg + '\n')
+                # Use empty classification on error
+                output_dict.append({'paper_id': i, 'class_options': [], 'class_labels': []})
         
         class_options = [c for c in self.get_children()]
         class_map = {c:0 for c in self.get_children()}
