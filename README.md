@@ -88,6 +88,8 @@ OPENAI_MODEL=gpt-4o-mini
 python main.py                  # Run TaxoAdapt
 ```
 
+See below for instructions on using your own data.
+
 #### Get API Keys
 - **OpenAI**: [platform.openai.com/api-keys](https://platform.openai.com/api-keys)
 - **Azure OpenAI**: [portal.azure.com](https://portal.azure.com)
@@ -163,34 +165,7 @@ HUGGINGFACE_API_KEY=hf_xxxxx...
 HUGGINGFACE_MODEL=Qwen/Qwen2.5-72B-Instruct
 ```
 
-**No code changes required** - just edit `.env` and restart!
-
-**Note:** `LLM_PROVIDER` must be explicitly set. There is no default - you control exactly which LLM is used.
-
-#### Troubleshooting
-
-- **"LLM_PROVIDER environment variable is not set"**: 
-  - Check that `.env` file exists: `ls -la .env`
-  - If not, create it: `cp .env.example .env`
-  - Edit `.env` and set `LLM_PROVIDER` to your chosen provider (openai, azure, claude, or huggingface)
-  - Add your API key for that provider
-  - Make sure you're in the project root directory when running the code
-  
-- **"API key not found"**: 
-  - Edit `.env` and add your API key for the provider you selected
-  - Example: If `LLM_PROVIDER=openai`, you must set `OPENAI_API_KEY`
-  
-- **Import errors**: 
-  - Run `pip install -r requirements.txt`
-  - Make sure your virtual environment is activated
-  
-- **Rate limits**: 
-  - Use a cheaper model in `.env` (e.g., `OPENAI_MODEL=gpt-4o-mini`, `CLAUDE_MODEL=claude-3-haiku-20240307`)
-  - Check your API plan/credits with your provider
-
-**Security Note:** The `.env` file is ignored by git (see `.gitignore`) to keep your API keys secure. Never commit API keys to version control.
-
-**How it works:** The code automatically loads settings from `.env` at startup (via `python-dotenv`). The `LLM_PROVIDER` variable determines which provider to use - **you must set it explicitly**. There is no default, giving you full control over which LLM is used.
+## Running TaxoAdapt
 
 ### Arguments
 The following are the primary arguments for TaxoAdapt (defined in main.py; modify as needed):
