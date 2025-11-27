@@ -1,3 +1,6 @@
+*This repo is a fork of the repo below, done as part of Medium article
+[Automatically Identifying Taxonomies from Documents: Using the TaxoAdapt Algorithm with Humanitarian Evaluation Reports](https://medium.com/@astrobagel/automatically-identifying-taxonomies-from-documents-using-the-taxoadapt-algorithm-with-ca265d87bc08). See [CHANGELOG](CHANGELOG.md) for what changed.*
+
 # TaxoAdapt: Aligning LLM-Based Multidimensional Taxonomy Construction to Evolving Research Corpora
 <br>Priyanka Kargupta, Nan Zhang, Yunyi Zhang, Rui Zhang, Prasenjit Mitra, Jiawei Han</a>
 
