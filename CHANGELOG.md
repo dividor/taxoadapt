@@ -1,6 +1,8 @@
-# Enhancements Log
+# Changelog
 
-This document lists all features and improvements added to this fork compared to the original source repository.
+This document lists all features and improvements added to this fork of [TaxoAdapt](https://github.com/pkargupta/taxoadapt) compared to the original source repository.
+
+**Original Paper:** Kargupta, P., Zhang, N., Zhang, Y., Zhang, R., Mitra, P., & Han, J. (2025). TaxoAdapt: Aligning LLM-Based Multidimensional Taxonomy Construction to Evolving Research Corpora. ACL 2025. [arXiv:2506.10737](https://arxiv.org/abs/2506.10737)
 
 ---
 

@@ -15,6 +15,7 @@ TaxoAdapt is a framework that dynamically adapts an LLM-generated taxonomy to a 
     - [Arguments](#arguments)
   - [Custom Dataset](#custom-dataset)
   - [Video](#video)
+  - [Changelog](#changelog)
   - [📖 Citation](#-citation)
 
 ## Setup
@@ -342,6 +343,18 @@ We assume that the dataset has a `title` and `abstract` field for each paper. If
 
 ## Video
 You can find a video explanation of the TaxoAdapt framework and its results on YouTube: [TaxoAdapt Video](https://youtu.be/dKUeSm9GoyU).
+
+## Changelog
+
+This fork includes several enhancements to the original TaxoAdapt implementation, including:
+- Multi-provider LLM support (OpenAI, Azure, Claude, Hugging Face)
+- Excel dataset input with custom column mapping
+- Flexible custom dimension definitions
+- Improved error handling and JSON parsing
+- Excel output generation for taxonomies
+- Data sampling utilities
+
+For a complete list of changes and new features, see **[CHANGELOG.md](CHANGELOG.md)**.
 
 
 ## 📖 Citation
